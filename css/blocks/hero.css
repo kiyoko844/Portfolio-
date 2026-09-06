@@ -265,7 +265,7 @@
 
 @media (width <= 600px) {
 	.hero__container {
-		min-height: 60svh;
+		min-height: 100svh;
 		padding-inline: 20px;
 	}
 
