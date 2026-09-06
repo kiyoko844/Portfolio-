@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<symbol id="minus" viewBox="0 0 20 2" fill="none">
+	<path
+		d="M19 1H1"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+	/>
+</symbol>
+<symbol id="plus"  viewBox="0 0 20 20" fill="none" >
+  <path d="M10.0003 19L10.0346 10M10.0003 1L10.0346 10M10.0346 10H19M10.0346 10H0.999999" stroke="#111111" stroke-width="2" stroke-linecap="round" />
+</symbol>
+<symbol id="point"  viewBox="0 0 13 13" fill="none" >
+  <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+</symbol>
+<symbol id="point-red"  viewBox="0 0 13 13" fill="none" >
+  <circle cx="6.5" cy="6.5" r="6.5" fill="#dc5b5b" />
+</symbol>
+<symbol id="arrow-left"  viewBox="0 0 43 43" fill="none" >
+  <g clip-path="url(#clip0_2534_134)">
+    <path
+	fill-rule="evenodd"
+	clip-rule="evenodd"
+	d="M6.80057 22.3831L36.5515 22.056C37.1038 22.05 37.5466 21.5973 37.5405 21.0451C37.5344 20.4928 37.0818 20.0501 36.5296 20.0561L6.63322 20.3848L18.213 8.03258C18.5907 7.62966 18.5703 6.99682 18.1674 6.6191C17.7644 6.24138 17.1316 6.2618 16.7539 6.66472L3.57141 20.7266C3.19369 21.1295 3.21412 21.7623 3.61703 22.14L18.3215 35.925C18.7244 36.3027 19.3573 36.2823 19.735 35.8793C20.1127 35.4764 20.0923 34.8436 19.6894 34.4659L6.80057 22.3831Z"
+	fill="currentColor"
+/>
+  </g>
+  <defs>
+    <clipPath id="clip0_2534_134">
+      <rect width="30" height="30"  transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 42.4265 21.2133)" />
+    </clipPath>
+  </defs>
+</symbol>
+<symbol id="arrow-right"  viewBox="0 0 43 43" fill="none" >
+  <g clip-path="url(#clip0_2534_213)">
+    <path
+	fill-rule="evenodd"
+	clip-rule="evenodd"
+	d="M35.6259 22.3831L5.87497 22.056C5.32271 22.05 4.87995 21.5973 4.88602 21.0451C4.89209 20.4928 5.3447 20.0501 5.89695 20.0561L35.7933 20.3848L24.2135 8.03258C23.8358 7.62966 23.8562 6.99682 24.2592 6.6191C24.6621 6.24138 25.2949 6.2618 25.6726 6.66472L38.8551 20.7266C39.2328 21.1295 39.2124 21.7621 38.8095 22.14L24.105 35.925C23.7021 36.3027 23.0692 36.2823 22.6915 35.8793C22.3138 35.4764 22.3342 34.8436 22.7371 34.4659L35.6259 22.3831Z"
+	fill="currentColor"
+/>
+  </g>
+  <defs>
+    <clipPath id="clip0_2534_213">
+      <rect width="30" height="30" transform="translate(0 21.2133) rotate(-45)" />
+    </clipPath>
+  </defs>
+</symbol>
+<symbol id="arrow-down"  viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M24.7031 25.722L3.22199 5.13588C2.82325 4.75375 2.80978 4.12073 3.19191 3.72199C3.57403 3.32325 4.20706 3.30978 4.6058 3.69191L26.1919 24.3786V7.44733C26.1919 6.89504 26.6396 6.44733 27.1919 6.44733C27.7442 6.44733 28.1919 6.89504 28.1919 7.44733V26.722C28.1919 27.2743 27.7442 27.722 27.1919 27.722H7.03635C6.48406 27.722 6.03635 27.2743 6.03635 26.722C6.03635 26.1697 6.48406 25.722 7.03635 25.722H24.7031Z" fill="currentColor" />
+</symbol>
+</svg>

@@ -1,0 +1,734 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap");
+
+/* =========================
+   RESET
+========================= */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	min-height: 100vh;
+
+	font-family: "Roboto Mono", monospace;
+
+	background-color: #f7f6f6;
+	color: #393b4a;
+}
+
+button,
+input,
+select {
+	font: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* =========================
+   TODO
+========================= */
+
+.todo {
+	min-height: 100vh;
+
+	background-color: #527c78;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.todo__header {
+	height: 90px;
+
+	display: flex;
+	align-items: center;
+
+	padding-inline: 34px;
+
+	background-color: #c88da3;
+
+	color: #fff8f8;
+}
+
+.todo__logo {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+
+	font-size: 42px;
+	font-weight: 700;
+	letter-spacing: 6px;
+}
+
+.todo__logo span {
+	font-weight: 400;
+}
+
+.todo__logo-icon {
+	margin-left: 28px;
+
+	width: 48px;
+	height: 58px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border: 3px solid #fff8f8;
+	border-radius: 5px;
+
+	font-size: 35px;
+	transform: rotate(-8deg);
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.todo__layout {
+	min-height: calc(100vh - 90px);
+
+	display: grid;
+	grid-template-columns: 420px 1fr;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.todo__sidebar {
+	position: relative;
+
+	padding: 60px 60px 40px;
+
+	background-color: #eeeeee;
+
+	border-right: 2px solid #cccccc;
+}
+
+.todo__nav {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.todo__nav-link {
+	min-height: 48px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding-inline: 24px;
+
+	font-size: 25px;
+
+	color: #393b4a;
+
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+.todo__nav-link:hover {
+	background-color: #e4d9de;
+}
+
+.todo__nav-link--active {
+	color: #3f5264;
+
+	background-color: #e7dde2;
+}
+
+.todo__nav-title {
+	margin-top: 15px;
+	padding-inline: 24px;
+
+	font-size: 25px;
+}
+
+.todo__nav-link--sub {
+	padding-left: 44px;
+
+	font-size: 22px;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.todo__badge {
+	width: 31px;
+	height: 31px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: 50%;
+
+	background-color: #c88da3;
+	color: white;
+
+	font-size: 15px;
+	font-weight: 600;
+}
+
+/* =========================
+   ADD PROJECT
+========================= */
+
+.todo__add-project {
+	position: absolute;
+	left: 58px;
+	bottom: 55px;
+
+	width: 76px;
+	height: 76px;
+
+	border: 0;
+	border-radius: 50%;
+
+	background-color: #c88da3;
+	color: white;
+
+	font-size: 55px;
+	font-weight: 300;
+	line-height: 1;
+
+	box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.todo__add-project:hover {
+	transform: translateY(-3px);
+
+	box-shadow: 0 11px 20px rgb(0 0 0 / 25%);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.todo__main {
+	min-width: 0;
+
+	padding: 60px 65px;
+
+	background-color: #fafafa;
+}
+
+.todo__top {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+
+	margin-bottom: 35px;
+}
+
+.todo__subtitle {
+	margin-bottom: 8px;
+
+	color: #c88da3;
+
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 3px;
+}
+
+.todo__title {
+	font-size: 42px;
+	font-weight: 500;
+
+	color: #393b4a;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.todo__stats {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+
+	flex-wrap: wrap;
+}
+
+.todo__stats span {
+	padding: 10px 14px;
+
+	border: 1px solid #c88da3;
+
+	color: #9f7184;
+
+	font-size: 13px;
+
+	background-color: #fff;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.todo__form {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto auto;
+	gap: 12px;
+
+	margin-bottom: 25px;
+}
+
+.todo__input {
+	width: 100%;
+	min-width: 0;
+
+	height: 55px;
+
+	padding-inline: 20px;
+
+	border: 2px solid #d7d7d7;
+
+	outline: none;
+
+	background-color: white;
+	color: #393b4a;
+
+	font-size: 16px;
+
+	transition: border-color 0.2s ease;
+}
+
+.todo__input::placeholder {
+	color: #aaa;
+}
+
+.todo__input:focus {
+	border-color: #c88da3;
+}
+
+/* =========================
+   CATEGORY
+========================= */
+
+.todo__category {
+	height: 55px;
+
+	padding-inline: 16px;
+
+	border: 2px solid #d7d7d7;
+
+	outline: none;
+
+	background-color: white;
+	color: #393b4a;
+
+	font-size: 14px;
+
+	cursor: pointer;
+
+	transition:
+		border-color 0.2s ease,
+		background-color 0.2s ease;
+}
+
+.todo__category:hover {
+	background-color: #fafafa;
+	border-color: #c88da3;
+}
+
+.todo__category:focus {
+	border-color: #c88da3;
+}
+
+/* =========================
+   ADD TODO
+========================= */
+
+.todo__add {
+	height: 55px;
+
+	padding-inline: 28px;
+
+	border: 0;
+
+	background-color: #c88da3;
+	color: white;
+
+	font-size: 15px;
+	font-weight: 600;
+
+	transition:
+		background-color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.todo__add:hover {
+	background-color: #b87991;
+}
+
+.todo__add:active {
+	transform: translateY(1px);
+}
+
+/* =========================
+   TODO LIST
+========================= */
+
+.todo__list {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+
+	list-style: none;
+}
+
+/* =========================
+   TODO ITEM
+========================= */
+
+.todo__item {
+	position: relative;
+
+	min-height: 61px;
+
+	display: flex;
+	align-items: center;
+
+	padding: 10px 20px 10px 62px;
+
+	background-color: #eeeeee;
+
+	border-left: 4px solid #f0a400;
+
+	color: #393b4a;
+
+	font-size: 16px;
+
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease;
+}
+
+.todo__item:hover {
+	background-color: #e8e8e8;
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.todo__item::before {
+	content: "";
+
+	position: absolute;
+	left: 17px;
+
+	width: 20px;
+	height: 20px;
+
+	border: 2px solid #45aaa2;
+
+	background-color: transparent;
+
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease;
+}
+
+.todo__item.completed::before {
+	content: "✓";
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: #45aaa2;
+	border-color: #45aaa2;
+
+	color: white;
+
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.todo__item.completed {
+	border-left-color: #42a34b;
+
+	color: #999;
+
+	text-decoration: line-through;
+}
+
+/* =========================
+   TODO BUTTONS
+========================= */
+
+.todo__item button {
+	flex-shrink: 0;
+
+	width: 40px;
+	height: 40px;
+
+	margin-left: 10px;
+
+	border: 0;
+
+	background-color: transparent;
+
+	color: #9f7184;
+
+	font-size: 0;
+
+	transition:
+		color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.todo__item button:first-of-type {
+	margin-left: auto;
+}
+
+.todo__item button:first-of-type::before {
+	content: "✎";
+
+	font-size: 25px;
+}
+
+.todo__item button:last-of-type::before {
+	content: "♜";
+
+	font-size: 21px;
+}
+
+.todo__item button:hover {
+	color: #c15e80;
+
+	transform: scale(1.1);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 20px;
+
+	background-color: rgb(40 40 40 / 55%);
+
+	backdrop-filter: blur(4px);
+}
+
+.modal[hidden] {
+	display: none;
+}
+
+.modal__content {
+	width: min(500px, 100%);
+
+	padding: 35px;
+
+	background-color: #fafafa;
+
+	box-shadow: 0 20px 60px rgb(0 0 0 / 25%);
+}
+
+.modal__title {
+	margin-bottom: 25px;
+
+	color: #393b4a;
+
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.modal__input {
+	width: 100%;
+	height: 55px;
+
+	padding-inline: 16px;
+
+	border: 2px solid #d5d5d5;
+
+	outline: none;
+
+	background-color: white;
+	color: #393b4a;
+}
+
+.modal__input:focus {
+	border-color: #c88da3;
+}
+
+.modal__actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+
+	margin-top: 20px;
+}
+
+.modal__cancel,
+.modal__save {
+	height: 45px;
+
+	padding-inline: 20px;
+
+	border: 0;
+}
+
+.modal__cancel {
+	background-color: #dddddd;
+	color: #555;
+}
+
+.modal__save {
+	background-color: #c88da3;
+	color: white;
+}
+
+.modal__cancel:hover {
+	background-color: #cccccc;
+}
+
+.modal__save:hover {
+	background-color: #b87991;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+	.todo__layout {
+		grid-template-columns: 280px 1fr;
+	}
+
+	.todo__sidebar {
+		padding-inline: 30px;
+	}
+
+	.todo__nav-link {
+		font-size: 19px;
+	}
+
+	.todo__nav-link--sub {
+		padding-left: 34px;
+		font-size: 18px;
+	}
+
+	.todo__nav-title {
+		font-size: 20px;
+	}
+
+	.todo__main {
+		padding: 40px 30px;
+	}
+
+	.todo__top {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 20px;
+	}
+}
+
+@media (max-width: 800px) {
+	.todo__form {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.todo__input {
+		grid-column: 1 / -1;
+	}
+
+	.todo__category,
+	.todo__add {
+		width: 100%;
+	}
+}
+
+@media (max-width: 700px) {
+	.todo__layout {
+		display: block;
+	}
+
+	.todo__sidebar {
+		display: none;
+	}
+
+	.todo__header {
+		height: 70px;
+
+		padding-inline: 20px;
+	}
+
+	.todo__logo {
+		font-size: 28px;
+		letter-spacing: 4px;
+	}
+
+	.todo__logo-icon {
+		display: none;
+	}
+
+	.todo__main {
+		padding: 30px 15px;
+	}
+
+	.todo__title {
+		font-size: 30px;
+	}
+
+	.todo__form {
+		grid-template-columns: 1fr;
+	}
+
+	.todo__input {
+		grid-column: auto;
+	}
+
+	.todo__category,
+	.todo__add {
+		width: 100%;
+	}
+
+	.todo__item {
+		padding-left: 55px;
+	}
+
+	.todo__stats {
+		width: 100%;
+	}
+
+	.todo__stats span {
+		flex: 1;
+		min-width: 0;
+		text-align: center;
+	}
+}

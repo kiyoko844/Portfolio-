@@ -1,0 +1,14 @@
+/* vars.css */
+@import url(./base/fonts.css);
+@import url(./base/globals.css);
+@import url(./base/normalize.css);
+@import url(./base/vars.css);
+
+/* blocks.css */
+@import url(./blocks/hero.css);
+@import url(./blocks/header.css);
+@import url(./blocks/about.css);
+@import url(./blocks/development-time.css);
+@import url(./blocks/project.css);
+@import url(./blocks/services.css);
+@import url(./blocks/contact.css);

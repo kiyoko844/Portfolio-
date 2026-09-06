@@ -1,0 +1,24 @@
+:root {
+	--font-family: "Inter", sans-serif;
+	--second-family: "Space Grotesk", sans-serif;
+
+	/* colors */
+	--background-color: #ddd;
+	--secondary-color: #f8f8f8;
+	--bg-color: #151515;
+	--accent-color: #ff4d5a;
+	--main-color: #fff;
+	--text-muted: #a6a6a6;
+	--color-date: #909090;
+
+	/* layers */
+	--layer-negative: -1;
+	--layer-0: 0;
+	--layer-1: 1;
+	--layer-2: 2;
+	--layer-3: 3;
+
+	/* transitions */
+	--transition-time: 0.3s;
+	--transition-time-slow: 0.5s;
+}

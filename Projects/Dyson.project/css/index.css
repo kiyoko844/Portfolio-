@@ -1,0 +1,29 @@
+/* vars.css */
+@import url(./base/fonts.css);
+@import url(./base/globals.css);
+@import url(./base/normalize.css);
+@import url(./base/vars.css);
+
+/* blocks.css */
+@import url(./blocks/header.css);
+@import url(./blocks/menu.css);
+@import url(./blocks/burger.css);
+@import url(./blocks/hero.css);
+@import url(./blocks/categories.css);
+@import url(./blocks/experts.css);
+@import url(./blocks/advantages.css);
+@import url(./blocks/special-offers.css);
+@import url(./blocks/reviews.css);
+@import url(./blocks/modal.css);
+@import url(./blocks/faq.css);
+@import url(./blocks/news.css);
+@import url(./blocks/feedback.css);
+@import url(./blocks/footer.css);
+
+/* main
+	> section:not(.hero):not(.categories):not(.experts):not(.advantages):not(
+		.special-offers
+	):not(.reviews):not(.faq):not(.news):not(.feedback),
+.footer {
+	display: none;
+} */

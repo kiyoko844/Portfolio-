@@ -1,0 +1,121 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.5.15,
+* Autoprefixer: v10.5.0
+* Browsers: last 4 version
+*/
+
+.video__container {
+	position: relative;
+}
+
+.video__image-preview {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.video__play-link {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	border-radius: 50%;
+	background-color: var(--accent-color);
+	width: 122px;
+	height: 122px;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.video__play-icon {
+	-webkit-transform: translateX(5px);
+	-ms-transform: translateX(5px);
+	transform: translateX(5px);
+	overflow: visible;
+}
+
+.video__play-link::after {
+	content: "";
+	position: absolute;
+	inset: -8px;
+	border: 2px solid var(--accent-color);
+	border-radius: 50%;
+	opacity: 0;
+	-webkit-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	transform: scale(0.8);
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	-webkit-transition:
+		opacity var(--transition-time),
+		-webkit-transform var(--transition-time);
+	transition:
+		opacity var(--transition-time),
+		-webkit-transform var(--transition-time);
+	transition:
+		transform var(--transition-time),
+		opacity var(--transition-time);
+	transition:
+		transform var(--transition-time),
+		opacity var(--transition-time),
+		-webkit-transform var(--transition-time);
+}
+
+.video__play-link:hover::after {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
+@media (width <= 1024px) {
+	.video__play-link {
+		width: 90px;
+		height: 90px;
+	}
+
+	.video__play-icon {
+		width: 25px;
+		height: 30px;
+	}
+}
+
+@media (width <= 768px) {
+	.video__play-link {
+		width: 65px;
+		height: 65px;
+	}
+
+	.video__play-icon {
+		width: 16px;
+		height: 20px;
+		-webkit-transform: translateX(3px);
+		-ms-transform: translateX(3px);
+		transform: translateX(3px);
+	}
+}
+
+@media (width <= 580px) {
+	.video__play-link {
+		width: 50px;
+		height: 50px;
+	}
+
+	.video__play-icon {
+		width: 14px;
+		height: 18px;
+		-webkit-transform: translateX(2px);
+		-ms-transform: translateX(2px);
+		transform: translateX(2px);
+	}
+}

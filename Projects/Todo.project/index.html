@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Todo List</title>
+
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+
+	<body>
+		<div class="todo">
+			<header class="todo__header">
+				<div class="todo__logo">
+					<span>//</span>
+					TO-DO
+				</div>
+
+				<div class="todo__logo-icon">✎</div>
+			</header>
+
+			<div class="todo__layout">
+				<aside class="todo__sidebar">
+					<nav class="todo__nav">
+						<a
+							href="#"
+							class="todo__nav-link todo__nav-link--active"
+							data-category="home"
+						>
+							<span>// Home</span>
+							<span class="todo__badge">4</span>
+						</a>
+
+						<a href="#" class="todo__nav-link" data-category="today">
+							<span>Today</span>
+							<span class="todo__badge">1</span>
+						</a>
+
+						<a href="#" class="todo__nav-link" data-category="week">
+							<span>Week</span>
+						</a>
+
+						<div class="todo__nav-title">Projects</div>
+
+						<a
+							href="#"
+							class="todo__nav-link todo__nav-link--sub"
+							data-category="gym"
+						>
+							<span>Gym</span>
+							<span class="todo__badge">1</span>
+						</a>
+
+						<a
+							href="#"
+							class="todo__nav-link todo__nav-link--sub"
+							data-category="study"
+						>
+							<span>Study</span>
+						</a>
+
+						<a
+							href="#"
+							class="todo__nav-link todo__nav-link--sub"
+							data-category="work"
+						>
+							<span>Work</span>
+							<span class="todo__badge">1</span>
+						</a>
+
+						<a href="#" class="todo__nav-link" data-category="notes">
+							<span>Notes</span>
+						</a>
+					</nav>
+
+					<button class="todo__add-project" type="button">+</button>
+				</aside>
+
+				<main class="todo__main">
+					<div class="todo__top">
+						<div>
+							<p class="todo__subtitle">MY TASKS</p>
+
+							<h1 class="todo__title">// Home</h1>
+						</div>
+
+						<div class="todo__stats">
+							<span class="todo__count"> Всего задач: 0 </span>
+
+							<span class="todo__remaining"> Осталось: 0 </span>
+
+							<span class="todo__completed"> Выполнено: 0 </span>
+						</div>
+					</div>
+
+					<form class="todo__form">
+						<input
+							class="todo__input"
+							type="text"
+							placeholder="Добавить новую задачу..."
+							autocomplete="off"
+						/>
+
+						<select class="todo__category">
+							<option value="home">Home</option>
+							<option value="today">Today</option>
+							<option value="week">Week</option>
+							<option value="gym">Gym</option>
+							<option value="study">Study</option>
+							<option value="work">Work</option>
+							<option value="notes">Notes</option>
+						</select>
+
+						<button class="todo__add" type="submit">Добавить</button>
+					</form>
+
+					<ul class="todo__list"></ul>
+				</main>
+			</div>
+		</div>
+
+		<div class="modal" hidden>
+			<div class="modal__content">
+				<h2 class="modal__title">Редактировать задачу</h2>
+
+				<input class="modal__input" type="text" autocomplete="off" />
+
+				<div class="modal__actions">
+					<button class="modal__cancel" type="button">Отмена</button>
+
+					<button class="modal__save" type="button">Сохранить</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="./js/index.js"></script>
+	</body>
+</html>

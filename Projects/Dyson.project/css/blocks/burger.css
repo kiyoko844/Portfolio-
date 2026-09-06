@@ -1,0 +1,252 @@
+.burger {
+	position: relative;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: var(--main-color);
+	cursor: pointer;
+	z-index: 200;
+}
+
+.burger__icon {
+	position: relative;
+	display: block;
+	width: 32px;
+	height: 2px;
+	background-color: var(--main-color);
+	transition: opacity 0.3s ease;
+}
+
+.burger__icon::before,
+.burger__icon::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 32px;
+	height: 2px;
+	background-color: var(--main-color);
+	transition:
+		top 0.3s ease,
+		transform 0.3s ease,
+		background-color 0.3s ease;
+}
+
+.burger__icon::before {
+	top: -9px;
+}
+
+.burger__icon::after {
+	top: 9px;
+}
+
+.burger:hover .burger__icon::before,
+.burger:hover .burger__icon::after {
+	background-color: var(--accent-color);
+}
+
+.burger:hover .burger__icon {
+	background-color: var(--accent-color);
+}
+
+.burger--open .burger__icon {
+	background-color: transparent;
+}
+
+.burger--open .burger__icon::before {
+	top: 0;
+	background-color: var(--main-color);
+	transform: rotate(45deg);
+}
+
+.burger--open .burger__icon::after {
+	top: 0;
+	background-color: var(--main-color);
+	transform: rotate(-45deg);
+}
+
+.burger--open:hover .burger__icon {
+	background-color: transparent;
+}
+
+.burger--open:hover .burger__icon::before,
+.burger--open:hover .burger__icon::after {
+	background-color: var(--accent-color);
+}
+
+.burger-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 320px;
+	height: 100vh;
+	padding: 120px 40px 40px;
+	background-color: var(--bg-color);
+	transform: translateX(-100%);
+	transition:
+		transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 0.4s ease;
+	box-shadow: none;
+}
+
+.burger-menu::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 320px;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(0 0 0 / 0%);
+	pointer-events: none;
+	transition: background-color 0.4s ease;
+}
+
+.burger-menu--active {
+	transform: translateX(0);
+	box-shadow: 12px 0 35px rgb(0 0 0 / 25%);
+}
+
+.burger-menu--active::before {
+	background-color: rgb(0 0 0 / 55%);
+}
+
+.burger-menu__list {
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.burger-menu__item {
+	opacity: 0;
+	transform: translateX(-20px);
+	transition:
+		opacity 0.3s ease,
+		transform 0.3s ease;
+}
+
+.burger-menu--active .burger-menu__item {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.burger-menu--active .burger-menu__item:nth-child(1) {
+	transition-delay: 0.08s;
+}
+
+.burger-menu--active .burger-menu__item:nth-child(2) {
+	transition-delay: 0.12s;
+}
+
+.burger-menu--active .burger-menu__item:nth-child(3) {
+	transition-delay: 0.16s;
+}
+
+.burger-menu--active .burger-menu__item:nth-child(4) {
+	transition-delay: 0.2s;
+}
+
+.burger-menu--active .burger-menu__item:nth-child(5) {
+	transition-delay: 0.24s;
+}
+
+.burger-menu--active .burger-menu__item:nth-child(6) {
+	transition-delay: 0.28s;
+}
+
+.burger-menu--active .burger-menu__item:nth-child(7) {
+	transition-delay: 0.32s;
+}
+
+.burger-menu__link {
+	display: inline-block;
+	font-family: var(--second-family);
+	font-weight: 700;
+	font-size: 22px;
+	line-height: 1.2;
+	color: var(--main-color);
+	transition:
+		color 0.3s ease,
+		transform 0.3s ease;
+}
+
+.burger-menu__link:hover {
+	color: var(--accent-color);
+	transform: translateX(6px);
+}
+
+@media (width <= 1024px) {
+	.burger {
+		display: inline-flex;
+	}
+}
+
+@media (width <= 768px) {
+	.burger {
+		width: 44px;
+		height: 44px;
+	}
+
+	.burger-menu {
+		width: min(320px, 85vw);
+		padding: 100px 30px 30px;
+	}
+
+	.burger-menu::before {
+		left: min(320px, 85vw);
+	}
+
+	.burger-menu__list {
+		gap: 20px;
+	}
+
+	.burger-menu__link {
+		font-size: 20px;
+	}
+}
+
+@media (width <= 480px) {
+	.burger {
+		width: 40px;
+		height: 40px;
+	}
+
+	.burger-menu {
+		width: 280px;
+		padding: 90px 25px 25px;
+	}
+
+	.burger-menu::before {
+		left: 280px;
+	}
+
+	.burger-menu__list {
+		gap: 18px;
+	}
+
+	.burger-menu__link {
+		font-size: 18px;
+	}
+}
+
+@media (width <= 380px) {
+	.burger-menu {
+		width: 260px;
+		padding: 85px 20px 20px;
+	}
+
+	.burger-menu::before {
+		left: 260px;
+	}
+
+	.burger-menu__link {
+		font-size: 17px;
+	}
+}

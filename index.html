@@ -1,0 +1,540 @@
+<!doctype html>
+<html class="page" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vadim — Frontend Developer</title>
+		<link rel="stylesheet" href="./css/index.css" />
+		<link rel="shortcut icon" href="./icons/favicon.png" type="image/x-icon" />
+		<script src="./js/header.js" defer></script>
+		<script src="./js/hero.js" defer></script>
+		<script src="./js/about.js" defer></script>
+		<script src="./js/development-time.js" defer></script>
+	</head>
+	<body class="page__body">
+		<header class="menu">
+			<div class="menu__container container">
+				<nav class="menu__nav">
+					<a class="menu__link" href="#home">
+						<span class="menu__number">01</span>
+						<span class="menu__text">Home</span>
+					</a>
+
+					<a class="menu__link" href="#about">
+						<span class="menu__number">02</span>
+						<span class="menu__text">About</span>
+					</a>
+
+					<a class="menu__link" href="#projects">
+						<span class="menu__number">03</span>
+						<span class="menu__text">Projects</span>
+					</a>
+
+					<a class="menu__link" href="#services">
+						<span class="menu__number">04</span>
+						<span class="menu__text">Services</span>
+					</a>
+
+					<a class="menu__link" href="#contacts">
+						<span class="menu__number">05</span>
+						<span class="menu__text">Contact</span>
+					</a>
+				</nav>
+			</div>
+
+			<div class="menu__progress"></div>
+		</header>
+		<main>
+			<section class="hero" id="home">
+				<canvas class="hero__canvas" aria-hidden="true"></canvas>
+
+				<div class="hero__container container">
+					<div class="hero__content">
+						<p class="hero__greeting">
+							Hello, I'm <span class="hero__name">Vadim.</span>
+						</p>
+						<h1 class="hero__title">I'm a frontend developer.</h1>
+						<a class="hero__link" href="#projects">
+							View my work
+							<span aria-hidden="true">↓</span>
+						</a>
+					</div>
+				</div>
+			</section>
+			<section class="about" id="about">
+				<div class="about__container container">
+					<div class="about__content">
+						<div class="about__orbit">
+							<div class="about__circle"></div>
+
+							<ul class="skills">
+								<li class="skills__item skills__item--html">
+									<img
+										class="skills__icon"
+										src="./images/html.png"
+										width="48"
+										height="55"
+										alt="HTML"
+									/>
+									<span class="skills__name">HTML</span>
+								</li>
+
+								<li class="skills__item skills__item--css">
+									<img
+										class="skills__icon"
+										src="./images/css.png"
+										width="48"
+										height="55"
+										alt="CSS"
+									/>
+									<span class="skills__name">CSS</span>
+								</li>
+
+								<li class="skills__item skills__item--javascript">
+									<img
+										class="skills__icon"
+										src="./images/js.png"
+										width="48"
+										height="55"
+										alt="JavaScript"
+									/>
+									<span class="skills__name">JavaScript</span>
+								</li>
+
+								<li class="skills__item skills__item--git">
+									<img
+										class="skills__icon"
+										src="./images/git.png"
+										width="48"
+										height="55"
+										alt="Git"
+									/>
+									<span class="skills__name">Git</span>
+								</li>
+
+								<li class="skills__item skills__item--react">
+									<img
+										class="skills__icon"
+										src="./images/react.png"
+										width="48"
+										height="55"
+										alt="React"
+									/>
+									<span class="skills__name">React</span>
+								</li>
+
+								<li class="skills__item skills__item--github">
+									<img
+										class="skills__icon"
+										src="./images/github.png"
+										width="48"
+										height="55"
+										alt="GitHub"
+									/>
+									<span class="skills__name">GitHub</span>
+								</li>
+							</ul>
+
+							<div class="profile">
+								<svg class="profile__picture" width="240" height="240">
+									<use href="./icons/profile.svg"></use>
+								</svg>
+
+								<p class="profile__blurb">
+									I’m a frontend developer focused on creating clean, modern,
+									and user-friendly interfaces. I enjoy turning ideas into
+									responsive websites with clear structure, thoughtful design,
+									and smooth interactions.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="development-time">
+				<div class="development-time__line">
+					<span class="development-time__label">DEVELOPING FOR</span>
+
+					<div class="development-time__timer">
+						<div class="development-time__item">
+							<span class="development-time__value" id="years">1</span>
+							<span class="development-time__unit">YEAR</span>
+						</div>
+
+						<span class="development-time__separator">·</span>
+
+						<div class="development-time__item">
+							<span class="development-time__value" id="months">3</span>
+							<span class="development-time__unit">MONTHS</span>
+						</div>
+
+						<span class="development-time__separator">·</span>
+
+						<div class="development-time__item">
+							<span class="development-time__value" id="days">27</span>
+							<span class="development-time__unit">DAYS</span>
+						</div>
+
+						<span class="development-time__separator">·</span>
+
+						<div class="development-time__item">
+							<span class="development-time__value" id="hours">08</span>
+							<span class="development-time__unit">HOURS</span>
+						</div>
+
+						<span class="development-time__separator">·</span>
+
+						<div class="development-time__item">
+							<span class="development-time__value" id="minutes">34</span>
+							<span class="development-time__unit">MINUTES</span>
+						</div>
+
+						<span class="development-time__separator">·</span>
+
+						<div class="development-time__item">
+							<span class="development-time__value" id="seconds">21</span>
+							<span class="development-time__unit">SECONDS</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="projects" id="projects">
+				<div class="container projects__container">
+					<div class="projects__header">
+						<span class="projects__label">SELECTED WORKS</span>
+						<h2 class="projects__title">PROJECTS</h2>
+					</div>
+
+					<div class="projects__list">
+						<article class="projects__item">
+							<div class="projects__number">01</div>
+
+							<div class="projects__content">
+								<div class="projects__info">
+									<h3 class="projects__name">DYSON</h3>
+									<p class="projects__type">PRODUCT LANDING PAGE</p>
+								</div>
+
+								<a
+									class="projects__link"
+									href="./projects/Dyson.project/index.html"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									VIEW PROJECT
+									<span aria-hidden="true">→</span>
+								</a>
+							</div>
+
+							<a
+								class="projects__preview"
+								href="./projects/Dyson.project/index.html"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Открыть проект Dyson"
+							>
+								<img
+									class="projects__image"
+									src="./images/projects/dyson.png"
+									alt="Превью проекта Dyson"
+									loading="lazy"
+								/>
+							</a>
+
+							<div class="projects__details">
+								<ul class="projects__technologies">
+									<li class="projects__technology">HTML</li>
+									<li class="projects__technology">CSS</li>
+									<li class="projects__technology">JAVASCRIPT</li>
+								</ul>
+
+								<p class="projects__description">
+									Responsive product landing page with interactive navigation,
+									burger menu, slider and adaptive layout.
+								</p>
+							</div>
+						</article>
+
+						<article class="projects__item">
+							<div class="projects__number">02</div>
+
+							<div class="projects__content">
+								<div class="projects__info">
+									<h3 class="projects__name">TODO LIST</h3>
+									<p class="projects__type">JAVASCRIPT APPLICATION</p>
+								</div>
+
+								<a
+									class="projects__link"
+									href="./projects/Todo.project/index.html"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									VIEW PROJECT
+									<span aria-hidden="true">→</span>
+								</a>
+							</div>
+
+							<a
+								class="projects__preview"
+								href="./projects/Todo.project/index.html"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Открыть проект Todo List"
+							>
+								<img
+									class="projects__image"
+									src="./images/projects/todo-list.png"
+									alt="Превью проекта Todo List"
+									loading="lazy"
+								/>
+							</a>
+
+							<div class="projects__details">
+								<ul class="projects__technologies">
+									<li class="projects__technology">HTML</li>
+									<li class="projects__technology">CSS</li>
+									<li class="projects__technology">JAVASCRIPT</li>
+								</ul>
+
+								<p class="projects__description">
+									Interactive Todo application with task creation, editing,
+									completion and deletion.
+								</p>
+							</div>
+						</article>
+
+						<article class="projects__item">
+							<div class="projects__number">03</div>
+
+							<div class="projects__content">
+								<div class="projects__info">
+									<h3 class="projects__name">PULSE FITNESS</h3>
+									<p class="projects__type">FITNESS LANDING PAGE</p>
+								</div>
+
+								<a
+									class="projects__link"
+									href="./projects/Pulse.project/index.html"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									VIEW PROJECT
+									<span aria-hidden="true">→</span>
+								</a>
+							</div>
+
+							<a
+								class="projects__preview"
+								href="./projects/Pulse.project/index.html"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Открыть проект Pulse Fitness"
+							>
+								<img
+									class="projects__image"
+									src="./images/projects/pulse.png"
+									alt="Превью проекта Pulse Fitness"
+									loading="lazy"
+								/>
+							</a>
+
+							<div class="projects__details">
+								<ul class="projects__technologies">
+									<li class="projects__technology">HTML</li>
+									<li class="projects__technology">CSS</li>
+									<li class="projects__technology">JAVASCRIPT</li>
+								</ul>
+
+								<p class="projects__description">
+									Responsive fitness website with interactive sliders, timetable
+									navigation, mobile menu and adaptive layout.
+								</p>
+							</div>
+						</article>
+
+						<!-- <article class="projects__item projects__item--coming-soon">
+							<div class="projects__number">04</div>
+
+							<div class="projects__content">
+								<div class="projects__info">
+									<h3 class="projects__name">COMING SOON</h3>
+									<p class="projects__type">NEXT PROJECT</p>
+								</div>
+							</div>
+
+							<div class="projects__preview">
+								<div class="projects__placeholder" aria-hidden="true">
+									<span>04</span>
+								</div>
+							</div>
+						</article> -->
+					</div>
+				</div>
+			</section>
+			<section class="services" id="services">
+				<div class="container services__container">
+					<div class="services__header">
+						<span class="services__label">WHAT I CAN DO</span>
+
+						<h2 class="services__title">SERVICES</h2>
+					</div>
+
+					<div class="services__grid">
+						<article class="services__item">
+							<span class="services__number">01</span>
+
+							<div class="services__content">
+								<h3 class="services__name">
+									FRONTEND<br />
+									DEVELOPMENT
+								</h3>
+
+								<p class="services__stack">HTML / CSS / JAVASCRIPT</p>
+							</div>
+						</article>
+
+						<article class="services__item">
+							<span class="services__number">02</span>
+
+							<div class="services__content">
+								<h3 class="services__name">
+									WORDPRESS<br />
+									DEVELOPMENT
+								</h3>
+
+								<p class="services__stack">PHP / ACF / WORDPRESS</p>
+							</div>
+						</article>
+
+						<article class="services__item">
+							<span class="services__number">03</span>
+
+							<div class="services__content">
+								<h3 class="services__name">
+									RESPONSIVE<br />
+									DESIGN
+								</h3>
+
+								<p class="services__stack">DESKTOP / TABLET / MOBILE</p>
+							</div>
+						</article>
+
+						<article class="services__item">
+							<span class="services__number">04</span>
+
+							<div class="services__content">
+								<h3 class="services__name">
+									WEBSITE<br />
+									REDESIGN
+								</h3>
+
+								<p class="services__stack">UI / LAYOUT / UX</p>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+			<div class="services-modal" id="servicesModal">
+				<div class="services-modal__overlay"></div>
+				<div class="services-modal__window">
+					<button
+						class="services-modal__close"
+						type="button"
+						aria-label="Close modal"
+					>
+						&times;
+					</button>
+					<span class="services-modal__number"></span>
+					<h3 class="services-modal__title"></h3>
+					<p class="services-modal__description"></p>
+				</div>
+			</div>
+			<section class="contacts" id="contacts">
+				<div class="container contacts__container">
+					<div class="contacts__header">
+						<span class="contacts__label">GET IN TOUCH</span>
+						<h2 class="contacts__title">LET'S WORK<br />TOGETHER</h2>
+					</div>
+
+					<div class="contacts__body">
+						<div class="contacts__message">
+							<div>
+								<span class="contacts__status">AVAILABLE FOR NEW PROJECTS</span>
+
+								<p class="contacts__text">
+									Have a project in mind or want to work together? Feel free to
+									reach out.
+								</p>
+							</div>
+
+							<a class="contacts__cta" href="mailto:khatmullinv@list.ru">
+								LET'S TALK
+								<span aria-hidden="true">→</span>
+							</a>
+						</div>
+
+						<div class="contacts__links">
+							<a class="contacts__link" href="mailto:khatmullinv@list.ru">
+								<span class="contacts__number">01</span>
+
+								<span class="contacts__info">
+									<span class="contacts__type">EMAIL</span>
+									<span class="contacts__value">khatmullinv@list.ru</span>
+								</span>
+
+								<span class="contacts__arrow" aria-hidden="true">↗</span>
+							</a>
+
+							<a
+								class="contacts__link"
+								href="https://github.com/kiyoko844"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<span class="contacts__number">02</span>
+
+								<span class="contacts__info">
+									<span class="contacts__type">GITHUB</span>
+									<span class="contacts__value">github.com/kiyoko844</span>
+								</span>
+
+								<span class="contacts__arrow" aria-hidden="true">↗</span>
+							</a>
+
+							<a
+								class="contacts__link"
+								href="https://t.me/xitsuma"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<span class="contacts__number">03</span>
+
+								<span class="contacts__info">
+									<span class="contacts__type">TELEGRAM</span>
+									<span class="contacts__value">@xitsuma</span>
+								</span>
+
+								<span class="contacts__arrow" aria-hidden="true">↗</span>
+							</a>
+						</div>
+					</div>
+
+					<footer class="contacts__footer">
+						<span class="contacts__copyright">© 2026</span>
+
+						<span class="contacts__built">
+							BUILT WITH HTML · CSS · JAVASCRIPT
+						</span>
+
+						<a class="contacts__top" href="#home">
+							BACK TO TOP
+							<span aria-hidden="true">↑</span>
+						</a>
+					</footer>
+				</div>
+			</section>
+		</main>
+		<script src="./js/services.js" defer></script>
+	</body>
+</html>

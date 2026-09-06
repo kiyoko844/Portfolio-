@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="arrow-right" viewBox="0 0 21 21" fill="none" >
+    <path d="M0.999958 10.2829L19.565 10.2829" stroke="#141414" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10.2825 1.00041L19.565 10.2829L10.2825 19.5654" stroke="#141414" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="arrow-left" viewBox="0 0 21 21" fill="none" >
+    <path d="M20.0001 10.2829L1.43506 10.2829" stroke="#141414" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10.7176 1.00041L1.43506 10.2829L10.7176 19.5654" stroke="#141414" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+

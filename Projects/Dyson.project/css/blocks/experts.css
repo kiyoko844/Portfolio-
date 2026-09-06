@@ -1,0 +1,137 @@
+.experts {
+	background-color: var(--secondary-color);
+}
+
+.experts__container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 20px;
+	padding-top: 75px;
+}
+
+.experts__title {
+	position: relative;
+	z-index: var(--layer-2);
+	width: 900px;
+	margin-bottom: 40px;
+	font-family: var(--second-family);
+	font-weight: 900;
+	font-size: 42px;
+	color: var(--bg-color);
+}
+
+.experts__description {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 140%;
+	color: var(--bg-color);
+}
+
+.experts__description p + p {
+	margin-top: 20px;
+}
+
+@media (width <= 1400px) {
+	.experts__img {
+		width: 45%;
+	}
+}
+
+@media (width <= 1200px) {
+	.experts__container {
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+	}
+
+	.experts__title {
+		width: auto;
+		font-size: 36px;
+	}
+
+	.experts__description {
+		max-width: 865px;
+		font-size: 16px;
+		color: var(--text-muted);
+	}
+
+	.experts__img {
+		display: none;
+	}
+}
+
+@media (width <= 1024px) {
+	.experts__container {
+		padding-block: 60px;
+	}
+
+	.experts__title {
+		margin-bottom: 30px;
+		font-size: 34px;
+	}
+
+	.experts__description {
+		font-size: 16px;
+	}
+
+	.experts__description p + p {
+		margin-top: 16px;
+	}
+}
+
+@media (width <= 768px) {
+	.experts__container {
+		padding-block: 50px;
+	}
+
+	.experts__title {
+		margin-bottom: 25px;
+		font-size: 24px;
+		line-height: 110%;
+	}
+
+	.experts__description {
+		font-size: 15px;
+		line-height: 140%;
+	}
+
+	.experts__description p + p {
+		margin-top: 15px;
+	}
+}
+
+@media (width <= 480px) {
+	.experts__container {
+		padding-block: 40px;
+	}
+
+	.experts__title {
+		margin-bottom: 20px;
+		font-size: 22px;
+	}
+
+	.experts__description {
+		font-size: 14px;
+		line-height: 145%;
+	}
+
+	.experts__description p + p {
+		margin-top: 12px;
+	}
+}
+
+@media (width <= 430px) {
+	.experts__title {
+		font-size: 18px;
+	}
+
+	.experts__description {
+		font-size: 12px;
+		line-height: 145%;
+	}
+}

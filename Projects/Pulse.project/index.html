@@ -1,0 +1,2137 @@
+<!doctype html>
+<html class="page" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/index.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+		/>
+		<link
+			rel="shortcut icon"
+			href="./icons/favicon-fitness-center.svg"
+			type="image/x-icon"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js  "
+			defer
+		></script>
+		<script src="./js/fslightbox.js" type="module"></script>
+		<script src="./js/index.js" type="module"></script>
+		<title>Pulse Fitness Center</title>
+	</head>
+	<body class="page__body">
+		<header class="header">
+			<div class="container header__container">
+				<a class="logo header__logo" href="#">
+					<img
+						class="logo__img"
+						src="./icons/Fitness-logo-img.svg"
+						alt="Логотип Fitness Center"
+						width="198"
+						height="37"
+					/>
+				</a>
+				<nav
+					class="menu header__menu"
+					id="header__menu"
+					aria-label="Главное меню"
+				>
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a class="menu__link menu__link--active" href="#home" lang="en"
+								>HOME</a
+							>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#catalogs" lang="en">CATALOGS</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#blog" lang="en">BLOG</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#collections" lang="en"
+								>COLLECTIONS</a
+							>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#contact-us" lang="en">CONTACT US</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header__actions">
+					<button
+						class="header__actions-button header__actions-button--cart"
+						title="Корзина"
+						aria-label="Корзина"
+					>
+						<svg class="header__icon" width="38" height="26">
+							<use
+								class="header__actions-icon"
+								href="./icons/actions.svg#cart"
+							></use>
+						</svg>
+						<span class="header__actions-badge">2</span>
+					</button>
+					<button
+						class="header__actions-button"
+						title="Поиск"
+						aria-label="Поиск"
+					>
+						<svg class="header__icon" width="29" height="29">
+							<use
+								class="header__actions-icon"
+								href="./icons/actions.svg#search"
+							></use>
+						</svg>
+					</button>
+					<button
+						class="header__burger burger"
+						aria-label="Открыть меню"
+						aria-expanded="false"
+						aria-controls="header__menu"
+					>
+						<svg class="burger__icon-menu" width="25" height="22">
+							<use href="./icons/actions.svg#burger"></use>
+						</svg>
+
+						<svg class="burger__icon-cross" width="25" height="22">
+							<use href="./icons/actions.svg#cross"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<section class="hero">
+				<div class="container hero__container">
+					<div class="hero__body">
+						<div class="hero__content">
+							<h1 class="hero__title">
+								POWER
+								<br />
+								FROM WITHIN
+							</h1>
+
+							<span class="hero__title-shadow">WITHIN</span>
+
+							<button class="hero__button" type="button"></button>
+						</div>
+
+						<div class="hero__image">
+							<picture>
+								<source srcset="./images/hero.img/section-hero-images.webp" />
+								<img
+									class="hero__img"
+									src="./images/hero.img/section-hero-images.png"
+									alt="Athlete training"
+									width="1920"
+									height="519"
+									loading="lazy"
+								/>
+							</picture>
+						</div>
+					</div>
+				</div>
+				<div class="hero__cards">
+					<article class="hero__card hero__card--link">
+						<a class="hero__card-link" href="#">
+							<div class="hero__card-content">
+								<p class="hero__card-category">FITNESS</p>
+								<h3 class="hero__card-title">IMPROVE YOUR STRENGTH</h3>
+							</div>
+
+							<div class="hero__card-footer">
+								<span class="hero__card-text">GET STARTED</span>
+								<svg class="hero__card-arrow" width="21" height="21">
+									<use href="./icons/main-sprite.svg#arrow-right"></use>
+								</svg>
+							</div>
+						</a>
+					</article>
+
+					<article class="hero__card">
+						<div class="hero__card-content">
+							<p class="hero__card-category">BODYBUILDING</p>
+							<h3 class="hero__card-title">GET BEST BODY SHAPES</h3>
+						</div>
+
+						<footer class="hero__card-footer">
+							<a class="hero__card-footer-link" href="#">
+								<span class="hero__card-text">GET STARTED</span>
+
+								<svg class="hero__card-arrow" width="21" height="21">
+									<use href="./icons/main-sprite.svg#arrow-right"></use>
+								</svg>
+							</a>
+						</footer>
+					</article>
+
+					<article class="hero__card">
+						<div class="hero__card-content">
+							<p class="hero__card-category">CROSSFIT</p>
+							<h3 class="hero__card-title">THE BEST DIETARY PLANS</h3>
+						</div>
+
+						<footer class="hero__card-footer">
+							<a class="hero__card-footer-link" href="#">
+								<span class="hero__card-text">GET STARTED</span>
+
+								<svg class="hero__card-arrow" width="21" height="21">
+									<use href="./icons/main-sprite.svg#arrow-right"></use>
+								</svg>
+							</a>
+						</footer>
+					</article>
+				</div>
+			</section>
+			<section class="about decor">
+				<div class="container about__container">
+					<div class="about__slide">
+						<div class="about__info">
+							<h2 class="about__title">
+								BE <span class="about__title-accent">BETTER</span>
+							</h2>
+							<div class="about__content">
+								<div class="about__block">
+									<h3 class="about__subtitle">OUR STORY</h3>
+
+									<p class="about__text">
+										We believe great results begin with quality nutrition. Every
+										product is carefully developed to support your goals,
+										recovery, and everyday performance.
+									</p>
+								</div>
+
+								<div class="about__block">
+									<h3 class="about__subtitle">OUR MISSION</h3>
+
+									<p class="about__text">
+										Our mission is to inspire healthier lifestyles by providing
+										trusted nutrition that helps every athlete unlock their full
+										potential.
+									</p>
+								</div>
+							</div>
+
+							<a href="#" class="button about__button"> READ MORE </a>
+						</div>
+
+						<div class="about__media">
+							<div class="about__slider swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="about__nutrition">
+											<div class="about__nutrition-item">
+												<div class="about__nutrition-content">
+													<span class="about__nutrition-value">24G</span>
+													<span class="about__nutrition-label">PROTEIN</span>
+												</div>
+											</div>
+
+											<div
+												class="about__nutrition-item about__nutrition-item--accent"
+											>
+												<div class="about__nutrition-content">
+													<span class="about__nutrition-value">5.5G</span>
+													<span
+														class="about__nutrition-label about__nutrition-label--accent"
+														>BCAAS</span
+													>
+												</div>
+											</div>
+										</div>
+
+										<div class="about__product">
+											<picture>
+												<source
+													srcset="./images/about.img/Whey-protein.webp"
+													type="image/webp"
+												/>
+												<img
+													class="about__product-image"
+													src="./images/about.img/Whey-protein.png"
+													alt="Whey Protein"
+													width="476"
+													height="679"
+													loading="lazy"
+												/>
+											</picture>
+
+											<div class="about__badge">
+												<img
+													src="./icons/about-icon.svg"
+													alt="Иконка"
+													loading="lazy"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="about__nutrition">
+											<div class="about__nutrition-item">
+												<div class="about__nutrition-content">
+													<span class="about__nutrition-value">5G</span>
+													<span class="about__nutrition-label">CREATINE</span>
+												</div>
+											</div>
+
+											<div
+												class="about__nutrition-item about__nutrition-item--accent"
+											>
+												<div class="about__nutrition-content">
+													<span class="about__nutrition-value">0G</span>
+													<span
+														class="about__nutrition-label about__nutrition-label--accent"
+														>SUGAR</span
+													>
+												</div>
+											</div>
+										</div>
+
+										<div class="about__product">
+											<picture>
+												<source
+													srcset="./images/about.img/Creatine.webp"
+													type="image/webp"
+												/>
+												<img
+													class="about__product-image"
+													src="./images/about.img/Creatine.png"
+													alt="Creatine Monohydrate"
+													width="476"
+													height="679"
+													loading="lazy"
+												/>
+											</picture>
+
+											<div class="about__badge">
+												<img
+													src="./icons/about-icon.svg"
+													alt="Иконка"
+													loading="lazy"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="about__nutrition">
+											<div class="about__nutrition-item">
+												<div class="about__nutrition-content">
+													<span class="about__nutrition-value">300MG</span>
+													<span class="about__nutrition-label">CITRULLINE</span>
+												</div>
+											</div>
+
+											<div
+												class="about__nutrition-item about__nutrition-item--accent"
+											>
+												<div class="about__nutrition-content">
+													<span class="about__nutrition-value">6G</span>
+													<span
+														class="about__nutrition-label about__nutrition-label--accent"
+														>CITRULLINE</span
+													>
+												</div>
+											</div>
+										</div>
+
+										<div class="about__product">
+											<picture>
+												<source
+													srcset="./images/about.img/Citrulline.webp"
+													type="image/webp"
+												/>
+												<img
+													class="about__product-image"
+													src="./images/about.img/Citrulline.png"
+													alt="Citrulline"
+													width="476"
+													height="679"
+													loading="lazy"
+												/>
+											</picture>
+
+											<div class="about__badge">
+												<img
+													src="./icons/about-icon.svg"
+													alt="Иконка"
+													loading="lazy"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="about__nutrition">
+											<div class="about__nutrition-item">
+												<div class="about__nutrition-content">
+													<span class="about__nutrition-value">300G</span>
+													<span class="about__nutrition-label">ARGININE</span>
+												</div>
+											</div>
+
+											<div
+												class="about__nutrition-item about__nutrition-item--accent"
+											>
+												<div class="about__nutrition-content">
+													<span class="about__nutrition-value">30</span>
+													<span
+														class="about__nutrition-label about__nutrition-label--accent"
+														>CAPSULES</span
+													>
+												</div>
+											</div>
+										</div>
+
+										<div class="about__product">
+											<picture>
+												<source
+													srcset="./images/about.img/Arginine.webp"
+													type="image/webp"
+												/>
+												<img
+													class="about__product-image"
+													src="./images/about.img/Arginine.png"
+													alt="Arginine"
+													width="476"
+													height="679"
+													loading="lazy"
+												/>
+											</picture>
+
+											<div class="about__badge">
+												<img
+													src="./icons/about-icon.svg"
+													alt="Иконка"
+													loading="lazy"
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="about__pagination">
+								<button class="about__pagination-button">1</button>
+								<button class="about__pagination-button">2</button>
+								<button
+									class="about__pagination-button about__pagination-button--active"
+								>
+									3
+								</button>
+								<button class="about__pagination-button">4</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="categories">
+				<div class="categories__ticker">
+					<div class="categories__ticker-track">
+						<span class="categories__ticker-item">APPROACH</span>
+						<span class="categories__ticker-item">CARDIO</span>
+						<span class="categories__ticker-item">KICKBOX</span>
+						<span class="categories__ticker-item">JIU-JITSU</span>
+						<span class="categories__ticker-item">BOXING</span>
+
+						<span class="categories__ticker-item">APPROACH</span>
+						<span class="categories__ticker-item">CARDIO</span>
+						<span class="categories__ticker-item">KICKBOX</span>
+						<span class="categories__ticker-item">JIU-JITSU</span>
+						<span class="categories__ticker-item">BOXING</span>
+					</div>
+				</div>
+
+				<div class="categories__grid">
+					<article class="categories__card">
+						<picture>
+							<source
+								srcset="./images/categories.img/categories-man.webp"
+								type="image/webp"
+							/>
+							<img
+								class="categories__card-image"
+								src="./images/categories.img/categories-man.png"
+								width="640"
+								height="704"
+								alt="Спортивный мужчина занимается в фитнес-зале на канатах"
+								loading="lazy"
+							/>
+						</picture>
+						<footer class="categories__card-footer">
+							<a href="#" class="categories__card-footer-link">
+								<span class="categories__card-text">ACCESSORIES</span>
+								<svg class="categories__card-arrow" width="21" height="21">
+									<use href="./icons/main-sprite.svg#arrow-right"></use>
+								</svg>
+							</a>
+						</footer>
+					</article>
+					<article class="categories__card categories__card--link">
+						<a class="categories__card-link" href="#">
+							<picture>
+								<source
+									srcset="./images/categories.img/categories.webp"
+									type="image/webp"
+								/>
+								<img
+									class="categories__card-image"
+									src="./images/categories.img/categories.png"
+									width="640"
+									height="704"
+									alt="Принадлежности для фитнеса"
+									loading="lazy"
+								/>
+							</picture>
+							<div class="categories__card-footer">
+								<span class="categories__card-text">GEAR</span>
+								<svg class="categories__card-arrow" width="21" height="21">
+									<use href="./icons/main-sprite.svg#arrow-right"></use>
+								</svg>
+							</div>
+						</a>
+					</article>
+					<article class="categories__card">
+						<picture>
+							<source
+								srcset="./images/categories.img/categories-woman.webp"
+								type="image/webp"
+							/>
+							<img
+								class="categories__card-image"
+								src="./images/categories.img/categories-woman.png"
+								width="640"
+								height="704"
+								alt="Спортивный женщина поднимает гирю перед собой "
+								loading="lazy"
+							/>
+						</picture>
+						<footer class="categories__card-footer">
+							<a href="#" class="categories__card-footer-link">
+								<span class="categories__card-text">DESIGN</span>
+								<svg class="categories__card-arrow" width="21" height="21">
+									<use href="./icons/main-sprite.svg#arrow-right"></use>
+								</svg>
+							</a>
+						</footer>
+					</article>
+				</div>
+			</section>
+			<section class="programs decor">
+				<div class="container programs__container">
+					<div class="programs__header">
+						<span class="programs__title-shadow">WITHIN</span>
+						<h2 class="programs__title">OUR PROGRAMS</h2>
+						<p class="programs__text">
+							Explore training programs designed to build strength, improve
+							endurance, and help you achieve your fitness goals at every level.
+						</p>
+					</div>
+					<div class="programs__cards">
+						<article class="programs__card">
+							<picture class="programs__card-blur">
+								<source
+									srcset="./images/programs.img/programs-woman.webp"
+									type="image/webp"
+								/>
+								<img
+									class="programs__card-image"
+									src="./images/programs.img/programs-woman.png"
+									alt="Спортивная девушка занимается с тренером"
+									width="374"
+									height="488"
+									loading="lazy"
+								/>
+							</picture>
+							<div class="programs__card-content">
+								<p class="programs__card-category">COACHING</p>
+								<p class="programs__card-category">STRENGTH</p>
+							</div>
+							<h3 class="programs__card-title">GYM DAY</h3>
+						</article>
+						<article class="programs__card">
+							<picture class="programs__card-blur">
+								<source
+									srcset="./images/programs.img/programs.webp"
+									type="image/webp"
+								/>
+								<img
+									class="programs__card-image"
+									src="./images/programs.img/programs.png"
+									alt="Мужчина держит в руках гирю весом 32 килограмма "
+									width="374"
+									height="488"
+									loading="lazy"
+								/>
+							</picture>
+							<div class="programs__card-content">
+								<p class="programs__card-category">COACHING</p>
+								<p class="programs__card-category">STRENGTH</p>
+							</div>
+							<h3 class="programs__card-title">CARDIO WORKOUT</h3>
+						</article>
+						<article class="programs__card">
+							<picture class="programs__card-blur">
+								<source
+									srcset="./images/programs.img/programs-woman-2.webp"
+									type="image/webp"
+								/>
+								<img
+									class="programs__card-image"
+									src="./images/programs.img/programs-woman-2.png"
+									alt="Спортивная девушка стоит в планке и смотрит вперед"
+									width="374"
+									height="488"
+									loading="lazy"
+								/>
+							</picture>
+							<div class="programs__card-content">
+								<p class="programs__card-category">COACHING</p>
+								<p class="programs__card-category">STRENGTH</p>
+							</div>
+							<h3 class="programs__card-title">BODY STRENGTH</h3>
+						</article>
+					</div>
+				</div>
+				<a class="programs__card-footer programs__footer-link" href="#">
+					<p class="programs__footer-text">VIEW FULL TIMETABLE</p>
+					<svg class="categories__card-arrow" width="21" height="21">
+						<use href="./icons/main-sprite.svg#arrow-right"></use>
+					</svg>
+				</a>
+			</section>
+			<section class="testimonials">
+				<div class="testimonials__container">
+					<div class="testimonials__media">
+						<picture>
+							<source
+								srcset="./images/testimonials.img/testimonials-woman-box.webp"
+								type="image/webp"
+							/>
+							<img
+								class="testimonials__image"
+								width="960"
+								height="832"
+								src="./images/testimonials.img/testimonials-woman-box.png"
+								alt="Спортивная девушка занимается боксом"
+								loading="lazy"
+							/>
+						</picture>
+						<div class="testimonials__badge">
+							<img src="./icons/about-icon.svg" alt="Иконка" loading="lazy" />
+						</div>
+					</div>
+
+					<div class="testimonials__content">
+						<picture>
+							<source
+								srcset="./images/testimonials.img/testimonials-woman-box-2.webp"
+								type="image/webp"
+							/>
+							<img
+								class="testimonials__image"
+								width="960"
+								height="832"
+								src="./images/testimonials.img/testimonials-woman-box-2.png"
+								alt="Спортивная девушка занимается боксом с тренером"
+								loading="lazy"
+							/>
+						</picture>
+						<div class="testimonials__quote">
+							<svg class="testimonials__quote-icon" width="100" height="100">
+								<use href="./icons/testimonials__quote-icon.svg"></use>
+							</svg>
+							<blockquote class="testimonials__text">
+								“THIS PLACE HELP ME ACCOMPLISHED MY <br />
+								BIGGEST GOAL, BE IN SHAPE”
+							</blockquote>
+						</div>
+						<div class="testimonials__author">
+							<p class="testimonials__profession">Graphic Designer</p>
+							<p class="testimonials__name">Monica Belsley</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonials__footer"></div>
+			</section>
+			<section class="advantages">
+				<div class="container advantages__container">
+					<div class="advantages__tabs">
+						<div class="advantages__circle"></div>
+						<button
+							class="advantages__title advantages__tab advantages__tab--active"
+						>
+							PULSE
+						</button>
+						<button class="advantages__tab">OUR STORY</button>
+						<button class="advantages__tab">APPROACH</button>
+						<button class="advantages__tab">OUR PLAN</button>
+					</div>
+					<div class="advantages__content">
+						<div class="advantages__panel advantages__panel--active">
+							<div class="advantages__item">
+								<h3 class="advantages__item-title">WHO WE ARE</h3>
+								<p class="advantages__item-description">
+									Pulse is a modern fitness community where people of all
+									experience levels come together to improve their strength,
+									health, and confidence. We combine expert coaching with an
+									inspiring atmosphere to help every member reach their full
+									potential.
+								</p>
+							</div>
+
+							<div class="advantages__item">
+								<h3 class="advantages__item-title">OUR VALUES</h3>
+								<p class="advantages__item-description">
+									We believe in consistency, respect, and continuous growth.
+									Every workout is an opportunity to become stronger, build
+									discipline, and create healthy habits that last a lifetime.
+								</p>
+							</div>
+
+							<div class="advantages__item">
+								<h3 class="advantages__item-title">WHY PULSE</h3>
+								<p class="advantages__item-description">
+									From premium equipment and experienced trainers to
+									personalized programs and a supportive community, Pulse
+									provides everything you need to enjoy your fitness journey and
+									achieve lasting results.
+								</p>
+							</div>
+						</div>
+						<div class="advantages__panel">
+							<div class="advantages__item">
+								<h3 class="advantages__item-title">BEST GYM</h3>
+								<p class="advantages__item-description">
+									We created Pulse to be more than just a place to work out. It
+									is a space where every member feels motivated, supported, and
+									inspired to become a stronger version of themselves.
+								</p>
+							</div>
+							<div class="advantages__item">
+								<h3 class="advantages__item-title">OUR MISSION</h3>
+								<p class="advantages__item-description">
+									Our mission is to help people build healthy habits through
+									expert coaching, modern equipment, and a welcoming community
+									that encourages progress every day.
+								</p>
+							</div>
+							<div class="advantages__item">
+								<h3 class="advantages__item-title">TRAINING PHILOSOPHY</h3>
+								<p class="advantages__item-description">
+									We believe that consistency is more important than perfection.
+									Every workout is designed to improve strength, confidence, and
+									overall well-being at your own pace.
+								</p>
+							</div>
+						</div>
+						<div class="advantages__panel">
+							<div class="advantages__item">
+								<h3 class="advantages__item-title">PERSONAL COACHING</h3>
+								<p class="advantages__item-description">
+									Every training plan is tailored to your goals, fitness level,
+									and lifestyle. Our certified coaches guide you through every
+									step of your journey.
+								</p>
+							</div>
+							<div class="advantages__item">
+								<h3 class="advantages__item-title">MODERN EQUIPMENT</h3>
+								<p class="advantages__item-description">
+									We provide high-quality equipment designed to support safe,
+									effective, and enjoyable workouts for beginners and
+									experienced athletes alike.
+								</p>
+							</div>
+							<div class="advantages__item">
+								<h3 class="advantages__item-title">LASTING RESULTS</h3>
+								<p class="advantages__item-description">
+									Our approach focuses on consistency, proper technique, and
+									long-term progress, helping you build healthy habits that last
+									beyond the gym.
+								</p>
+							</div>
+						</div>
+						<div class="advantages__panel">
+							<div class="advantages__item">
+								<h3 class="advantages__item-title">FLEXIBLE PROGRAMS</h3>
+								<p class="advantages__item-description">
+									Choose from strength training, functional fitness, cardio, or
+									personalized workout plans designed to match your goals and
+									schedule.
+								</p>
+							</div>
+							<div class="advantages__item">
+								<h3 class="advantages__item-title">NUTRITION GUIDANCE</h3>
+								<p class="advantages__item-description">
+									Achieve better results with practical nutrition advice and
+									meal recommendations that complement your training routine.
+								</p>
+							</div>
+							<div class="advantages__item">
+								<h3 class="advantages__item-title">CONTINUOUS SUPPORT</h3>
+								<p class="advantages__item-description">
+									Stay motivated with regular progress tracking, expert
+									feedback, and a supportive community that helps you stay
+									focused on your goals.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="advantages__footer">
+					<ul class="advantages__statistics">
+						<li class="advantages__statistics-item">
+							<h3 class="advantages__statistics-number">6</h3>
+							<p class="advantages__statistics-text">YEARS OF EXPERIENCES</p>
+						</li>
+						<li class="advantages__statistics-item">
+							<h3 class="advantages__statistics-number">20</h3>
+							<p class="advantages__statistics-text">SELECTED TRAINER</p>
+						</li>
+						<li class="advantages__statistics-item">
+							<h3 class="advantages__statistics-number">120К</h3>
+							<p class="advantages__statistics-text">CALORIES BURNED</p>
+						</li>
+						<li class="advantages__statistics-item">
+							<h3 class="advantages__statistics-number">432</h3>
+							<p class="advantages__statistics-text">HAPPY MEMBERS</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="services">
+				<div class="services__container">
+					<div class="services__grid">
+						<div class="services__image">
+							<picture class="services__image-blur">
+								<source
+									srcset="./images/services.img/services-img-1.webp"
+									type="image/webp"
+								/>
+								<img
+									src="./images/services.img/services-img-1.png"
+									width="480"
+									height="480"
+									alt="Спортивный мужчина поднимается гантели"
+									loading="lazy"
+								/>
+							</picture>
+						</div>
+						<article class="services__card">
+							<p class="services__card-category">TRAINING</p>
+							<h3 class="services__card-title">BEST GYM</h3>
+							<p class="services__card-text">
+								Train in a modern fitness space with expert coaching and a
+								motivating atmosphere.
+							</p>
+							<a class="service__card-link" href="#">READ MORE</a>
+						</article>
+						<div class="services__image">
+							<picture class="services__image-blur">
+								<source
+									srcset="./images/services.img/services-img-2.webp"
+									type="image/webp"
+								/>
+								<img
+									src="./images/services.img/services-img-2.png"
+									width="480"
+									height="480"
+									alt="Спортивный мужчина держит штангу в наклоне"
+									loading="lazy"
+								/>
+							</picture>
+						</div>
+						<article class="services__card">
+							<p class="services__card-category">TRAINING</p>
+							<h3 class="services__card-title">WEIGHT LOSS</h3>
+							<p class="services__card-text">
+								Burn calories and improve endurance with personalized programs
+								designed for lasting results.
+							</p>
+							<a class="service__card-link" href="#">READ MORE</a>
+						</article>
+						<article class="services__card services__card--link">
+							<a class="services__card-link" href="#">
+								<p class="services__card-category">TRAINING</p>
+								<h3 class="services__card-title">BEST EQUIPMENT</h3>
+								<p class="services__card-text">
+									Train with premium equipment designed for safe, comfortable,
+									and effective workouts for every fitness level.
+								</p>
+								<span class="services__card-read-more">READ MORE</span>
+							</a>
+						</article>
+						<div class="services__image">
+							<picture class="services__image-blur">
+								<source
+									srcset="./images/services.img/services-img-3.webp"
+									type="image/webp"
+								/>
+								<img
+									src="./images/services.img/services-img-3.png"
+									width="480"
+									height="480"
+									alt="Спортивный девушка приседает со штангой и смотрит вперед"
+									loading="lazy"
+								/>
+							</picture>
+						</div>
+						<article class="services__card">
+							<p class="services__card-category">TRAINING</p>
+							<h3 class="services__card-title">NUTRITION PLAN</h3>
+							<p class="services__card-text">
+								Improve your results with balanced meal plans and practical
+								nutrition guidance every day.
+							</p>
+							<a class="service__card-link" href="#">READ MORE</a>
+						</article>
+						<div class="services__image">
+							<picture class="services__image-blur">
+								<source
+									srcset="./images/services.img/services-img-4.webp"
+									type="image/webp"
+								/>
+								<img
+									src="./images/services.img/services-img-4.png"
+									width="480"
+									height="480"
+									alt="Спортивная девушка поднимается по лестнице"
+									loading="lazy"
+								/>
+							</picture>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="timetable decor">
+				<div class="container timetable__container">
+					<div class="timetable__header">
+						<h2 class="timetable__title">CLASSES TIMETABLE</h2>
+						<nav class="timetable__nav">
+							<div class="timetable__circle"></div>
+							<ul class="timetable__list">
+								<li class="timetable__item timetable__item--active">
+									<button class="timetable__button timetable__button--active">
+										ALL TRAINING
+									</button>
+								</li>
+								<li class="timetable__item">
+									<button class="timetable__button">BODYBUILDING</button>
+								</li>
+								<li class="timetable__item">
+									<button class="timetable__button">CARDIO</button>
+								</li>
+								<li class="timetable__item">
+									<button class="timetable__button">GYM</button>
+								</li>
+								<li class="timetable__item">
+									<button class="timetable__button">POWERLIFTING</button>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="timetable__table-wrapper">
+						<div class="timetable__panel timetable__panel--active">
+							<div class="timetable__table">
+								<table class="table">
+									<thead class="timetable__head">
+										<tr>
+											<th></th>
+											<th class="timetable__heading">MONDAY</th>
+											<th class="timetable__heading">TUESDAY</th>
+											<th class="timetable__heading">WEDNESDAY</th>
+											<th class="timetable__heading">THURSDAY</th>
+											<th class="timetable__heading">FRIDAY</th>
+											<th class="timetable__heading">SATURDAY</th>
+											<th class="timetable__heading">SUNDAY</th>
+										</tr>
+									</thead>
+									<tbody class="timetable__body">
+										<tr>
+											<td class="timetable__time">07:00 - 08:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">FITNESS CLASS</h3>
+												<p class="timetable__trainer">Mark Thompson</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BOXING</h3>
+												<p class="timetable__trainer">Sarah Anderson</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">OPEN GYM</h3>
+												<p class="timetable__trainer">Jessica Roberts</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BODYBUILDING</h3>
+												<p class="timetable__trainer">Michael Johnson</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">OPEN GYM</h3>
+												<p class="timetable__trainer">Jessica Roberts</p>
+											</td>
+										</tr>
+										<tr>
+											<td class="timetable__time">08:00 - 09:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BOXING</h3>
+												<p class="timetable__trainer">Sarah Anderson</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BODYBUILDING</h3>
+												<p class="timetable__trainer">Michael Johnson</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">FITNESS CLASS</h3>
+												<p class="timetable__trainer">Mark Thompson</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BOXING</h3>
+												<p class="timetable__trainer">Sarah Anderson</p>
+											</td>
+											<td class="timetable__cell"></td>
+										</tr>
+										<tr>
+											<td class="timetable__time">09:00 - 10:00</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">BOXING</h3>
+												<p class="timetable__trainer">Sarah Anderson</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">BOXING</h3>
+												<p class="timetable__trainer">Sarah Anderson</p>
+											</td>
+										</tr>
+										<tr>
+											<td class="timetable__time">10:00 - 11:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">OPEN GYM</h3>
+												<p class="timetable__trainer">Jessica Roberts</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BODYBUILDING</h3>
+												<p class="timetable__trainer">Michael Johnson</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">FITNESS CLASS</h3>
+												<p class="timetable__trainer">Mark Thompson</p>
+											</td>
+										</tr>
+										<tr>
+											<td class="timetable__time">11:00 - 12:00</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BODYBUILDING</h3>
+												<p class="timetable__trainer">Michael Johnson</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BOXING</h3>
+												<p class="timetable__trainer">Sarah Anderson</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">OPEN GYM</h3>
+												<p class="timetable__trainer">Jessica Roberts</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">FITNESS CLASS</h3>
+												<p class="timetable__trainer">Mark Thompson</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="timetable__panel">
+							<div class="timetable__table">
+								<table class="table">
+									<thead class="timetable__head">
+										<tr>
+											<th></th>
+											<th class="timetable__heading">MONDAY</th>
+											<th class="timetable__heading">TUESDAY</th>
+											<th class="timetable__heading">WEDNESDAY</th>
+											<th class="timetable__heading">THURSDAY</th>
+											<th class="timetable__heading">FRIDAY</th>
+											<th class="timetable__heading">SATURDAY</th>
+											<th class="timetable__heading">SUNDAY</th>
+										</tr>
+									</thead>
+									<tbody class="timetable__body">
+										<tr>
+											<td class="timetable__time">07:00 - 08:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">YOGA FLOW</h3>
+												<p class="timetable__trainer">Emily Carter</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">HIIT TRAINING</h3>
+												<p class="timetable__trainer">Daniel Moore</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">STRETCHING</h3>
+												<p class="timetable__trainer">Olivia Brooks</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">CROSSFIT</h3>
+												<p class="timetable__trainer">Ryan Walker</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">PILATES</h3>
+												<p class="timetable__trainer">Sophia Green</p>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">08:00 - 09:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">SPINNING</h3>
+												<p class="timetable__trainer">Lucas Bennett</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">
+													FUNCTIONAL TRAINING
+												</h3>
+												<p class="timetable__trainer">Mia Collins</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">CORE WORKOUT</h3>
+												<p class="timetable__trainer">Noah Adams</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">KICKBOXING</h3>
+												<p class="timetable__trainer">Grace Wilson</p>
+											</td>
+											<td class="timetable__cell"></td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">09:00 - 10:00</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">POWER LIFTING</h3>
+												<p class="timetable__trainer">Ethan Cooper</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">CARDIO BLAST</h3>
+												<p class="timetable__trainer">Chloe Evans</p>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">10:00 - 11:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">MOBILITY</h3>
+												<p class="timetable__trainer">Liam Scott</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">TRX TRAINING</h3>
+												<p class="timetable__trainer">Ava Mitchell</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BOOTCAMP</h3>
+												<p class="timetable__trainer">Jacob Turner</p>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">11:00 - 12:00</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">ZUMBA</h3>
+												<p class="timetable__trainer">Ella Harris</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">ENDURANCE</h3>
+												<p class="timetable__trainer">Nathan Reed</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BARRE</h3>
+												<p class="timetable__trainer">Isabella King</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">
+													STRENGTH TRAINING
+												</h3>
+												<p class="timetable__trainer">Logan Parker</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="timetable__panel">
+							<div class="timetable__table">
+								<table class="table">
+									<thead class="timetable__head">
+										<tr>
+											<th></th>
+											<th class="timetable__heading">MONDAY</th>
+											<th class="timetable__heading">TUESDAY</th>
+											<th class="timetable__heading">WEDNESDAY</th>
+											<th class="timetable__heading">THURSDAY</th>
+											<th class="timetable__heading">FRIDAY</th>
+											<th class="timetable__heading">SATURDAY</th>
+											<th class="timetable__heading">SUNDAY</th>
+										</tr>
+									</thead>
+									<tbody class="timetable__body">
+										<tr>
+											<td class="timetable__time">07:00 - 08:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">MORNING CARDIO</h3>
+												<p class="timetable__trainer">Emma Watson</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">CIRCUIT TRAINING</h3>
+												<p class="timetable__trainer">James Miller</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">YOGA BASICS</h3>
+												<p class="timetable__trainer">Megan Lewis</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">POWER FITNESS</h3>
+												<p class="timetable__trainer">Chris Turner</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">PILATES CORE</h3>
+												<p class="timetable__trainer">Natalie Hill</p>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">08:00 - 09:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BODY PUMP</h3>
+												<p class="timetable__trainer">Andrew White</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">ABS & CORE</h3>
+												<p class="timetable__trainer">Sophie Adams</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">TOTAL BODY</h3>
+												<p class="timetable__trainer">Benjamin Clark</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BOX FIT</h3>
+												<p class="timetable__trainer">Rachel Morgan</p>
+											</td>
+											<td class="timetable__cell"></td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">09:00 - 10:00</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">WEIGHT TRAINING</h3>
+												<p class="timetable__trainer">David Foster</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">BOOTY WORKOUT</h3>
+												<p class="timetable__trainer">Victoria Ross</p>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">10:00 - 11:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BALANCE TRAINING</h3>
+												<p class="timetable__trainer">Henry Cooper</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">DANCE FITNESS</h3>
+												<p class="timetable__trainer">Olivia Reed</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">KETTLEBELL</h3>
+												<p class="timetable__trainer">Jack Bennett</p>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">11:00 - 12:00</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">AEROBICS</h3>
+												<p class="timetable__trainer">Charlotte Scott</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">MUSCLE BUILDING</h3>
+												<p class="timetable__trainer">Matthew Green</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BODY STRETCH</h3>
+												<p class="timetable__trainer">Anna Brooks</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">FIT CAMP</h3>
+												<p class="timetable__trainer">Samuel King</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="timetable__panel">
+							<div class="timetable__table">
+								<table class="table">
+									<thead class="timetable__head">
+										<tr>
+											<th></th>
+											<th class="timetable__heading">MONDAY</th>
+											<th class="timetable__heading">TUESDAY</th>
+											<th class="timetable__heading">WEDNESDAY</th>
+											<th class="timetable__heading">THURSDAY</th>
+											<th class="timetable__heading">FRIDAY</th>
+											<th class="timetable__heading">SATURDAY</th>
+											<th class="timetable__heading">SUNDAY</th>
+										</tr>
+									</thead>
+									<tbody class="timetable__body">
+										<tr>
+											<td class="timetable__time">07:00 - 08:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">FIT CAMP</h3>
+												<p class="timetable__trainer">Samuel King</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">YOGA BASICS</h3>
+												<p class="timetable__trainer">Megan Lewis</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BODY PUMP</h3>
+												<p class="timetable__trainer">Andrew White</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">PILATES CORE</h3>
+												<p class="timetable__trainer">Natalie Hill</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">CIRCUIT TRAINING</h3>
+												<p class="timetable__trainer">James Miller</p>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">08:00 - 09:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">KETTLEBELL</h3>
+												<p class="timetable__trainer">Jack Bennett</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">AEROBICS</h3>
+												<p class="timetable__trainer">Charlotte Scott</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">MORNING CARDIO</h3>
+												<p class="timetable__trainer">Emma Watson</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">MUSCLE BUILDING</h3>
+												<p class="timetable__trainer">Matthew Green</p>
+											</td>
+											<td class="timetable__cell"></td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">09:00 - 10:00</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">POWER FITNESS</h3>
+												<p class="timetable__trainer">Chris Turner</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">BOX FIT</h3>
+												<p class="timetable__trainer">Rachel Morgan</p>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">10:00 - 11:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BODY STRETCH</h3>
+												<p class="timetable__trainer">Anna Brooks</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BALANCE TRAINING</h3>
+												<p class="timetable__trainer">Henry Cooper</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">ABS & CORE</h3>
+												<p class="timetable__trainer">Sophie Adams</p>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">11:00 - 12:00</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">DANCE FITNESS</h3>
+												<p class="timetable__trainer">Olivia Reed</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">TOTAL BODY</h3>
+												<p class="timetable__trainer">Benjamin Clark</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">WEIGHT TRAINING</h3>
+												<p class="timetable__trainer">David Foster</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BOOTY WORKOUT</h3>
+												<p class="timetable__trainer">Victoria Ross</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="timetable__panel">
+							<div class="timetable__table">
+								<table class="table">
+									<thead class="timetable__head">
+										<tr>
+											<th></th>
+											<th class="timetable__heading">MONDAY</th>
+											<th class="timetable__heading">TUESDAY</th>
+											<th class="timetable__heading">WEDNESDAY</th>
+											<th class="timetable__heading">THURSDAY</th>
+											<th class="timetable__heading">FRIDAY</th>
+											<th class="timetable__heading">SATURDAY</th>
+											<th class="timetable__heading">SUNDAY</th>
+										</tr>
+									</thead>
+									<tbody class="timetable__body">
+										<tr>
+											<td class="timetable__time">07:00 - 08:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BOX FIT</h3>
+												<p class="timetable__trainer">Rachel Morgan</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">FIT CAMP</h3>
+												<p class="timetable__trainer">Samuel King</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">KETTLEBELL</h3>
+												<p class="timetable__trainer">Jack Bennett</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BODY STRETCH</h3>
+												<p class="timetable__trainer">Anna Brooks</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">MUSCLE BUILDING</h3>
+												<p class="timetable__trainer">Matthew Green</p>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">08:00 - 09:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">PILATES CORE</h3>
+												<p class="timetable__trainer">Natalie Hill</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BALANCE TRAINING</h3>
+												<p class="timetable__trainer">Henry Cooper</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">DANCE FITNESS</h3>
+												<p class="timetable__trainer">Olivia Reed</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">POWER FITNESS</h3>
+												<p class="timetable__trainer">Chris Turner</p>
+											</td>
+											<td class="timetable__cell"></td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">09:00 - 10:00</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">YOGA BASICS</h3>
+												<p class="timetable__trainer">Megan Lewis</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell" rowspan="2">
+												<h3 class="timetable__class-title">AEROBICS</h3>
+												<p class="timetable__trainer">Charlotte Scott</p>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">10:00 - 11:00</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">TOTAL BODY</h3>
+												<p class="timetable__trainer">Benjamin Clark</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">MORNING CARDIO</h3>
+												<p class="timetable__trainer">Emma Watson</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">CIRCUIT TRAINING</h3>
+												<p class="timetable__trainer">James Miller</p>
+											</td>
+										</tr>
+
+										<tr>
+											<td class="timetable__time">11:00 - 12:00</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">ABS & CORE</h3>
+												<p class="timetable__trainer">Sophie Adams</p>
+											</td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BODY PUMP</h3>
+												<p class="timetable__trainer">Andrew White</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">BOOTY WORKOUT</h3>
+												<p class="timetable__trainer">Victoria Ross</p>
+											</td>
+											<td class="timetable__cell"></td>
+											<td class="timetable__cell">
+												<h3 class="timetable__class-title">WEIGHT TRAINING</h3>
+												<p class="timetable__trainer">David Foster</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<a class="timetable__footer-link timetable__footer" href="#">
+					<p class="timetable__footer-text">VIEW FULL TIMETABLE</p>
+					<svg
+						class="timetable__footer-arrow"
+						width="21"
+						height="21"
+						aria-hidden="true"
+					>
+						<use href="./icons/main-sprite.svg#arrow-right"></use>
+					</svg>
+				</a>
+			</section>
+			<section class="video">
+				<div class="video__container">
+					<picture>
+						<source srcset="./images/video-play-img.webp" type="image/webp" />
+						<img
+							src="./images/video-play-img.png"
+							class="video__image-preview"
+							width="1920"
+							height="815"
+							alt="Спортивная девушка выполняет упражнения для мышц живота"
+							loading="lazy"
+						/>
+					</picture>
+					<a
+						class="video__play-link"
+						data-fslightbox
+						width="122"
+						height="122"
+						title="Запустить видео"
+						href="https://www.youtube.com/watch?v=xXeoKMS0OVM"
+					>
+						<img
+							src="./icons/video-play.svg"
+							width="37"
+							height="57"
+							alt="Запустить видео"
+							title="Запустить видео"
+							class="video__play-icon"
+							loading="lazy"
+						/>
+					</a>
+				</div>
+			</section>
+			<section class="locations">
+				<div class="locations__container container">
+					<h2 class="locations__title">OUR FITNESS CENTER</h2>
+					<ul class="locations__list">
+						<li class="locations__item">
+							<details class="locations__accordion" name="locations">
+								<summary class="locations__button">
+									<p class="locations__hours">
+										<time datetime="06:00">06:00</time>
+										–
+										<time datetime="23:00">23:00</time>
+									</p>
+									<span class="locations__city">Honolulu</span>
+									<svg class="locations__arrow-right" width="21" height="21">
+										<use href="./icons/main-sprite.svg#arrow-right"></use>
+									</svg>
+								</summary>
+								<div class="locations__content">
+									<div class="locations__cards">
+										<div class="locations__card">
+											<span class="locations__card-title">Open Daily</span>
+											<span class="locations__card-value">06:00 – 23:00</span>
+										</div>
+										<div class="locations__card">
+											<span class="locations__card-title">Specialization</span>
+											<span class="locations__card-value"
+												>Strength & Performance</span
+											>
+										</div>
+										<div class="locations__card">
+											<span class="locations__card-title">Membership</span>
+											<span class="locations__card-value">Flexible Plans</span>
+										</div>
+									</div>
+									<div class="locations__description">
+										<p class="locations__text">
+											Train in the heart of Honolulu with modern equipment,
+											spacious workout areas, and professional coaching. Whether
+											you're just starting or pushing new limits, you'll find
+											everything you need to stay motivated.
+										</p>
+									</div>
+								</div>
+							</details>
+						</li>
+						<li class="locations__item">
+							<details class="locations__accordion" name="locations">
+								<summary class="locations__button">
+									<p class="locations__hours">
+										<time datetime="06:00">06:00</time>
+										–
+										<time datetime="23:00">23:00</time>
+									</p>
+									<span class="locations__city locations__button--default"
+										>Hilo</span
+									>
+									<svg class="locations__arrow-right" width="21" height="21">
+										<use href="./icons/main-sprite.svg#arrow-right"></use>
+									</svg>
+								</summary>
+								<div class="locations__content">
+									<div class="locations__cards">
+										<div class="locations__card">
+											<span class="locations__card-title">Open Daily</span>
+											<span class="locations__card-value">06:00 – 23:00</span>
+										</div>
+										<div class="locations__card">
+											<span class="locations__card-title">Specialization</span>
+											<span class="locations__card-value"
+												>Functional Fitness</span
+											>
+										</div>
+										<div class="locations__card">
+											<span class="locations__card-title">Membership</span>
+											<span class="locations__card-value"
+												>All Levels Welcome</span
+											>
+										</div>
+									</div>
+									<div class="locations__description">
+										<p class="locations__text">
+											Discover a welcoming fitness space designed for every
+											level of experience. Enjoy functional training zones,
+											expert guidance, and a supportive community that helps you
+											reach your goals.
+										</p>
+									</div>
+								</div>
+							</details>
+						</li>
+						<li class="locations__item">
+							<details class="locations__accordion" name="locations">
+								<summary class="locations__button">
+									<p class="locations__hours">
+										<time datetime="06:00">06:00</time>
+										–
+										<time datetime="23:00">23:00</time>
+									</p>
+									<span class="locations__city">Lahaina</span>
+									<svg class="locations__arrow-right" width="21" height="21">
+										<use href="./icons/main-sprite.svg#arrow-right"></use>
+									</svg>
+								</summary>
+								<div class="locations__content">
+									<div class="locations__cards">
+										<div class="locations__card">
+											<span class="locations__card-title">Open Daily</span>
+											<span class="locations__card-value">06:00 – 23:00</span>
+										</div>
+										<div class="locations__card">
+											<span class="locations__card-title">Specialization</span>
+											<span class="locations__card-value"
+												>HIIT & Group Classes</span
+											>
+										</div>
+										<div class="locations__card">
+											<span class="locations__card-title">Membership</span>
+											<span class="locations__card-value"
+												>Group & Individual</span
+											>
+										</div>
+									</div>
+									<div class="locations__description">
+										<p class="locations__text">
+											Stay active in a modern gym featuring premium equipment
+											and a variety of training options. From strength workouts
+											to group classes, every session is built to keep you
+											progressing.
+										</p>
+									</div>
+								</div>
+							</details>
+						</li>
+						<li class="locations__item">
+							<details class="locations__accordion" name="locations">
+								<summary class="locations__button">
+									<p class="locations__hours">
+										<time datetime="06:00">06:00</time>
+										–
+										<time datetime="23:00">23:00</time>
+									</p>
+									<span class="locations__city">Kapolei</span>
+									<svg class="locations__arrow-right" width="21" height="21">
+										<use href="./icons/main-sprite.svg#arrow-right"></use>
+									</svg>
+								</summary>
+								<div class="locations__content">
+									<div class="locations__cards">
+										<div class="locations__card">
+											<span class="locations__card-title">Open Daily</span>
+											<span class="locations__card-value">06:00 – 23:00</span>
+										</div>
+										<div class="locations__card">
+											<span class="locations__card-title">Specialization</span>
+											<span class="locations__card-value"
+												>Personal Coaching</span
+											>
+										</div>
+										<div class="locations__card">
+											<span class="locations__card-title">Membership</span>
+											<span class="locations__card-value">Custom Programs</span>
+										</div>
+									</div>
+									<div class="locations__description">
+										<p class="locations__text">
+											Achieve your fitness goals with high-quality facilities
+											and experienced personal trainers. Flexible programs and a
+											motivating atmosphere make every workout enjoyable and
+											effective.
+										</p>
+									</div>
+								</div>
+							</details>
+						</li>
+						<li class="locations__item">
+							<details class="locations__accordion" name="locations">
+								<summary class="locations__button">
+									<p class="locations__hours">
+										<time datetime="06:00">06:00</time>
+										–
+										<time datetime="23:00">23:00</time>
+									</p>
+									<span class="locations__city">Pearl City</span>
+									<svg class="locations__arrow-right" width="21" height="21">
+										<use href="./icons/main-sprite.svg#arrow-right"></use>
+									</svg>
+								</summary>
+								<div class="locations__content">
+									<div class="locations__cards">
+										<div class="locations__card">
+											<span class="locations__card-title">Open Daily</span>
+											<span class="locations__card-value">06:00 – 23:00</span>
+										</div>
+										<div class="locations__card">
+											<span class="locations__card-title">Specialization</span>
+											<span class="locations__card-value"
+												>Performance Training</span
+											>
+										</div>
+										<div class="locations__card">
+											<span class="locations__card-title">Membership</span>
+											<span class="locations__card-value"
+												>Premium Experience</span
+											>
+										</div>
+									</div>
+									<div class="locations__description">
+										<p class="locations__text">
+											Experience a fitness center built for comfort,
+											performance, and results. Train with cutting-edge
+											equipment, receive professional support, and enjoy a space
+											that inspires you to improve every day.
+										</p>
+									</div>
+								</div>
+							</details>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="trainers decor">
+				<div class="container trainers__container">
+					<div class="trainers__header">
+						<span class="trainers__title-shadow">WITHIN</span>
+						<h2 class="trainers__title">MEET THE PROS</h2>
+						<p class="trainers__text">
+							Our experienced coaches are here to inspire, guide, and help you
+							achieve your fitness goals with personalized training.
+						</p>
+					</div>
+					<div class="trainers__cards">
+						<article class="trainers__card">
+							<picture class="trainers__card-picture">
+								<source
+									srcset="./images/trainers.img/trainer-woman-1.webp"
+									type="image/webp"
+								/>
+								<img
+									class="trainers__card-image"
+									width="393"
+									height="488"
+									src="./images/trainers.img/trainer-woman-1.png"
+									alt="Спортивная девушка занимается с тренером"
+									loading="lazy"
+								/>
+							</picture>
+							<a class="trainers__badge" href="#" aria-label="Twitter">
+								<svg class="trainers__icon" width="20" height="17">
+									<use href="./icons/twitter.svg"></use>
+								</svg>
+							</a>
+							<div class="trainers__card-content">
+								<p class="trainers__card-category">BOXING</p>
+								<p class="trainers__card-category">COACH</p>
+							</div>
+							<h3 class="trainers__card-name">Sarah Anderson</h3>
+						</article>
+						<article class="trainers__card">
+							<div class="trainers__card-image">
+								<picture class="trainers__card-picture">
+									<source
+										srcset="./images/trainers.img/coach-man-1.webp"
+										type="image/webp"
+									/>
+									<img
+										class="trainers__card-image"
+										width="393"
+										height="488"
+										src="./images/trainers.img/coach-man-1.png"
+										alt="Спортивный мужчина занимается с канатами"
+										loading="lazy"
+									/>
+								</picture>
+							</div>
+							<a class="trainers__badge" href="#" aria-label="Twitter">
+								<svg class="trainers__icon" width="20" height="17">
+									<use href="./icons/twitter.svg"></use>
+								</svg>
+							</a>
+							<div class="trainers__card-content">
+								<p class="trainers__card-category">FITNESS</p>
+								<p class="trainers__card-category">COACH</p>
+							</div>
+							<h3 class="trainers__card-name">Mark Thompson</h3>
+						</article>
+						<article class="trainers__card">
+							<picture class="trainers__card-picture">
+								<source
+									srcset="./images/trainers.img/trainer-woman-2.webp"
+									type="image/webp"
+								/>
+								<img
+									class="trainers__card-image"
+									width="393"
+									height="488"
+									src="./images/trainers.img/trainer-woman-2.png"
+									alt="Спортивная девушка держит перед собой гирю в руках"
+									loading="lazy"
+								/>
+							</picture>
+							<a class="trainers__badge" href="#" aria-label="Twitter">
+								<svg class="trainers__icon" width="20" height="17">
+									<use href="./icons/twitter.svg"></use>
+								</svg>
+							</a>
+							<div class="trainers__card-content">
+								<p class="trainers__card-category">GYM</p>
+								<p class="trainers__card-category">COACH</p>
+							</div>
+							<h3 class="trainers__card-name">Jessica Roberts</h3>
+						</article>
+						<article class="trainers__card">
+							<picture class="trainers__card-picture">
+								<source
+									srcset="./images/trainers.img/coach-man-2.webp"
+									type="image/webp"
+								/>
+								<img
+									class="trainers__card-image"
+									width="393"
+									height="488"
+									src="./images/trainers.img/coach-man-2.png"
+									alt="Спортивная мужчина занимается воркаутом"
+									loading="lazy"
+								/>
+							</picture>
+							<a class="trainers__badge" href="#" aria-label="Twitter">
+								<svg class="trainers__icon" width="20" height="17">
+									<use href="./icons/twitter.svg"></use>
+								</svg>
+							</a>
+							<div class="trainers__card-content">
+								<p class="trainers__card-category">BODYBUILDING</p>
+								<p class="trainers__card-category">COACH</p>
+							</div>
+							<h3 class="trainers__card-name">Michael Johnson</h3>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="blog" id="blog">
+				<div class="blog__container">
+					<div class="blog__info">
+						<h2 class="blog__title">LATEST <br />BLOG</h2>
+						<a class="blog__button button" href="#">READ MORE</a>
+					</div>
+
+					<div class="blog__list">
+						<article class="blog__card">
+							<picture>
+								<source
+									srcset="./images/blog.img/blog-woman.webp"
+									type="image/webp"
+								/>
+								<img
+									class="blog__card-image"
+									src="./images/blog.img/blog-woman.png"
+									width="393"
+									height="497"
+									alt="Девушка в розовом топе смотрит в сторону"
+									loading="lazy"
+								/>
+							</picture>
+							<div class="blog__card-content">
+								<time class="blog__card-date" datetime="2026-02-21">
+									21 FEBRUARY 2026
+								</time>
+
+								<h3 class="blog__card-title">
+									5 Essential Tips to Build Strength and Stay Consistent
+								</h3>
+							</div>
+						</article>
+
+						<article class="blog__card">
+							<picture>
+								<source
+									srcset="./images/blog.img/blog-man-1.webp"
+									type="image/webp"
+								/>
+								<img
+									class="blog__card-image"
+									src="./images/blog.img/blog-man-1.png"
+									width="393"
+									height="497"
+									alt="Мужчина держит в руках канат"
+									loading="lazy"
+								/>
+							</picture>
+							<div class="blog__card-content">
+								<time class="blog__card-date" datetime="2026-02-21">
+									21 FEBRUARY 2026
+								</time>
+
+								<h3 class="blog__card-title">
+									Why Recovery Is the Key to Better Fitness Results
+								</h3>
+							</div>
+						</article>
+
+						<article class="blog__card">
+							<picture>
+								<source
+									srcset="./images/blog.img/blog-man-2.webp"
+									type="image/webp"
+								/>
+								<img
+									class="blog__card-image"
+									src="./images/blog.img/blog-man-2.png"
+									width="393"
+									height="497"
+									alt="Мужчина в приседе со штангой"
+									loading="lazy"
+								/>
+							</picture>
+							<div class="blog__card-content">
+								<time class="blog__card-date" datetime="2026-02-21">
+									21 FEBRUARY 2026
+								</time>
+
+								<h3 class="blog__card-title">
+									Nutrition Habits That Help You Reach Your Goals Faster
+								</h3>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="footer" id="contact-us">
+				<div class="footer__container container">
+					<div class="footer__top">
+						<a href="#">
+							<img
+								class="footer__logo"
+								width="269"
+								height="51"
+								src="./images/footer-img/footer-top-logo.png"
+								alt="Логотип Fitness Center"
+								loading="lazy"
+							/>
+						</a>
+						<h2 class="footer__title">POWER FROM WITHIN</h2>
+					</div>
+
+					<div class="footer__body">
+						<div class="footer__content">
+							<div class="footer__contacts">
+								<h3 class="footer__subtitle">CONTACT US</h3>
+								<a class="footer__link" href="mailto:hello@pulse.com"
+									>hello@pulse.com</a
+								>
+								<a class="footer__link" href="tel:+19076838196">
+									+907 683 8196</a
+								>
+							</div>
+							<div class="footer__social">
+								<h3 class="footer__subtitle">FOLLOW US</h3>
+								<ul class="footer__social-list">
+									<li class="footer__social-item">
+										<a class="footer__social-link" href="#">
+											<svg class="footer-icon" width="20" height="20">
+												<use href="./icons/footer-sprite.svg#Facebook"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="footer__social-item">
+										<a class="footer__social-link" href="#">
+											<svg class="footer-icon" width="20" height="20">
+												<use href="./icons/footer-sprite.svg#Twitter"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="footer__social-item">
+										<a class="footer__social-link" href="#">
+											<svg class="footer-icon" width="20" height="20">
+												<use href="./icons/footer-sprite.svg#Instagram"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__locations">
+							<h3 class="footer__subtitle">OUR LOCATION</h3>
+
+							<div class="footer__location">
+								<h4 class="footer__location-title">Hawaii</h4>
+								<p class="footer__location-address">
+									828 Timbercrest Road,<br />
+									Healy City, AK 99743
+								</p>
+							</div>
+							<div class="footer__location">
+								<h4 class="footer__location-title">New York</h4>
+								<p class="footer__location-address">
+									828 Timbercrest Road,<br />
+									Healy City, AK 99743
+								</p>
+							</div>
+						</div>
+						<div class="footer__hours">
+							<h3 class="footer__subtitle">OPENING HOURS</h3>
+							<div class="footer__schedule">
+								<h4 class="footer__schedule-title">Monday-Friday</h4>
+								<p class="footer__schedule-text">
+									Our doors are open<br />
+									06:00 - 22:00
+								</p>
+							</div>
+							<div class="footer__schedule">
+								<h4 class="footer__schedule-title">Weekends</h4>
+								<p class="footer__schedule-text">
+									Our doors are open<br />
+									10:00 - 21:00
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__bottom">
+					<div class="footer__container container">
+						<p class="footer__copyright">
+							Copyright <strong>Dotcreativemarket</strong>, All Rights Reserved
+						</p>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

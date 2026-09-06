@@ -1,0 +1,31 @@
+:root {
+	/* font-family */
+	--font-family: "Oswald", sans-serif;
+	--second-family: "Archivo", sans-serif;
+
+	/* colors */
+	--background-color: #d9d9d9;
+	--main-color: #fff;
+	--accent-color: #f47521;
+	--bg-color: #141414;
+	--secondary-color: #d0d0d0;
+	--dimness-color: #979797;
+	--border-color: #7c7c7c;
+	--text-muted: #a6a6a6;
+	--surface-color: #303030;
+
+	/* container */
+	--container-width: 1540px;
+	--container-padding: 15px;
+
+	/* layers */
+	--layer-negative: -1;
+	--layer-0: 0;
+	--layer-1: 1;
+	--layer-2: 2;
+	--layer-3: 3;
+
+	/* transitions */
+	--transition-time: 0.3s;
+	--transition-time-slow: 0.5s;
+}
