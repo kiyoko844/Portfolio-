@@ -1,491 +1,677 @@
-// Находим HTML-элементы Todo и сохраняем их в переменные,
-// чтобы потом управлять ими через JavaScript.
-
-const form = document.querySelector(".todo__form");
-// Находит форму добавления задачи.
-
-const input = document.querySelector(".todo__input");
-// Находит поле, куда вводим текст задачи.
-
-const category = document.querySelector(".todo__category");
-// Находит select с выбором категории.
+const list = document.querySelector(".todo__list");
 
 const todoTitle = document.querySelector(".todo__title");
-
-const navLinks = document.querySelectorAll(".todo__nav-link");
-// Находит ВСЕ ссылки sidebar:
-// Home, Today, Week, Gym, Study, Work, Notes.
-
-const badge = document.querySelector(".todo__badge");
-
-const ul = document.querySelector(".todo__list");
-// Находит <ul>, внутри которого будут создаваться задачи.
-
 const todoCount = document.querySelector(".todo__count");
-// Находит место для количества всех задач.
-
-const todoCompleted = document.querySelector(".todo__completed");
-// Находит место для количества выполненных задач.
-
 const todoRemaining = document.querySelector(".todo__remaining");
-// Находит место для количества оставшихся задач.
+const todoCompleted = document.querySelector(".todo__completed");
 
-// Элементы модального окна.
+const navLinks = document.querySelectorAll(".todo__nav-link[data-category]");
+
+const addProjectButton = document.querySelector(".todo__add-project");
 
 const modal = document.querySelector(".modal");
-// Всё модальное окно.
+
+const modalTitle = document.querySelector(".modal__title");
 
 const modalInput = document.querySelector(".modal__input");
-// Поле ввода внутри модального окна.
+
+const modalCategory = document.querySelector(".modal__select");
+
+const modalDate = document.querySelector("#modal-date");
+
+const modalTime = document.querySelector("#modal-time");
 
 const modalCancel = document.querySelector(".modal__cancel");
-// Кнопка "Отмена".
 
 const modalSave = document.querySelector(".modal__save");
-// Кнопка "Сохранить".
 
-// Основные переменные состояния.
+const modalClose = document.querySelector(".modal__close");
+
+const priorityInputs = document.querySelectorAll(
+	'.priority input[name="priority"]',
+);
+
+const projects = [
+	{
+		id: "home",
+		name: "Home",
+	},
+	{
+		id: "today",
+		name: "Today",
+	},
+	{
+		id: "week",
+		name: "Week",
+	},
+	{
+		id: "gym",
+		name: "Gym",
+	},
+	{
+		id: "study",
+		name: "Study",
+	},
+	{
+		id: "work",
+		name: "Work",
+	},
+	{
+		id: "notes",
+		name: "Notes",
+	},
+];
 
 let todos = [];
-// Массив всех задач.
-// Изначально пустой.
-
-let currentEditTodo = null;
-// Здесь хранится задача, которую сейчас редактируем.
-// null = сейчас ничего не редактируем.
 
 let currentCategory = "home";
-// Хранит текущую открытую категорию.
-// При запуске открыта Home.
 
-// =====================================================
-// СТАТИСТИКА
-// =====================================================
+let currentEditTodo = null;
+
+function saveTodos() {
+	localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function getProject(categoryId) {
+	return projects.find((project) => project.id === categoryId) || projects[0];
+}
+
+function getPriorityText(priority) {
+	switch (priority) {
+		case "low":
+			return "Низкий";
+
+		case "high":
+			return "Высокий";
+
+		default:
+			return "Средний";
+	}
+}
+
+function formatDate(date, time) {
+	if (!date && !time) {
+		return "";
+	}
+
+	let result = "";
+
+	if (date) {
+		const parts = date.split("-");
+
+		if (parts.length === 3) {
+			result = `${parts[2]}.${parts[1]}.${parts[0]}`;
+		}
+	}
+
+	if (time) {
+		result += result ? ` • ${time}` : time;
+	}
+
+	return result;
+}
 
 function updateTodoCount() {
-	// Функция пересчитывает статистику задач.
+	const tasks = todos.filter((todo) => todo.category !== "notes");
 
-	let completedCount = 0;
-	// Счётчик выполненных задач.
-	// Начинаем с 0.
+	const completedCount = tasks.filter((todo) => todo.isCompleted).length;
 
-	for (let i = 0; i < todos.length; i++) {
-		// Проходим по всем задачам.
+	const remainingCount = tasks.length - completedCount;
 
-		if (todos[i].isCompleted) {
-			// Проверяем:
-			// выполнена ли текущая задача?
-
-			completedCount++;
-			// Если выполнена → увеличиваем счётчик на 1.
-		}
-	}
-
-	let remainingCount = todos.length - completedCount;
-	// Осталось задач =
-	// все задачи - выполненные.
-
-	todoCount.textContent = `Всего задач: ${todos.length}`;
-	// Выводим количество всех задач на страницу.
+	todoCount.textContent = `Всего задач: ${tasks.length}`;
 
 	todoRemaining.textContent = `Осталось: ${remainingCount}`;
-	// Выводим количество оставшихся задач.
 
 	todoCompleted.textContent = `Выполнено: ${completedCount}`;
-	// Выводим количество выполненных задач.
+
+	updateBadges();
 }
 
-// =====================================================
-// ЗАГРУЗКА ИЗ LOCAL STORAGE
-// =====================================================
+function updateBadges() {
+	navLinks.forEach((link) => {
+		const badge = link.querySelector(".todo__badge");
 
-const result = localStorage.getItem("todos");
-// Получаем сохранённые задачи из localStorage.
-// Если ничего нет → result будет null.
-
-todos = JSON.parse(result) || [];
-// JSON.parse превращает строку из localStorage обратно в массив.
-//
-// Если result существует:
-// todos = сохранённый массив.
-//
-// Если result отсутствует:
-// todos = [].
-
-// =====================================================
-// СТАРЫЕ ЗАДАЧИ
-// =====================================================
-
-for (let i = 0; i < todos.length; i++) {
-	// Проходим по всем загруженным задачам.
-
-	const currentTodo = todos[i];
-	// Берём текущую задачу.
-
-	if (!currentTodo.category) {
-		// Если у старой задачи нет category...
-
-		currentTodo.category = "home";
-		// ...назначаем ей категорию Home.
-	}
-}
-
-saveTodos();
-// Сохраняем изменённый массив обратно в localStorage.
-// Теперь старые задачи тоже получают category.
-
-// =====================================================
-// SIDEBAR
-// =====================================================
-
-for (let i = 0; i < navLinks.length; i++) {
-	navLinks[i].addEventListener("click", (event) => {
-		event.preventDefault();
-
-		currentCategory = navLinks[i].dataset.category;
-
-		for (let j = 0; j < navLinks.length; j++) {
-			navLinks[j].classList.remove("todo__nav-link--active");
+		if (!badge) {
+			return;
 		}
 
-		navLinks[i].classList.add("todo__nav-link--active");
+		const categoryId = link.dataset.category;
 
-		todoTitle.textContent =
-			"// " + currentCategory[0].toUpperCase() + currentCategory.slice(1);
+		const count = todos.filter(
+			(todo) =>
+				todo.category === categoryId &&
+				todo.category !== "notes" &&
+				!todo.isCompleted,
+		).length;
 
-		renderTodos(todos);
+		badge.textContent = count;
 	});
 }
 
-// =====================================================
-// ПЕРВЫЙ ЗАПУСК
-// =====================================================
+function renderEmpty() {
+	const empty = document.createElement("li");
 
-updateTodoCount();
-// Показываем статистику после загрузки данных.
+	empty.className = "todo__empty";
 
-renderTodos(todos);
-// Показываем задачи на странице.
+	empty.textContent =
+		currentCategory === "notes"
+			? "Здесь пока нет заметок."
+			: "Здесь пока нет задач.";
 
-// =====================================================
-// ДОБАВЛЕНИЕ ЗАДАЧИ
-// =====================================================
+	list.append(empty);
+}
 
-form.addEventListener("submit", (event) => {
-	// Срабатывает при отправке формы.
+function getEditIcon() {
+	return `
+		<svg
+			viewBox="0 0 24 24"
+			fill="none"
+			aria-hidden="true"
+		>
+			<path
+				d="M4 20h4L18.5 9.5
+				a2.12 2.12 0 0 0 0-3
+				l-1-1
+				a2.12 2.12 0 0 0-3 0
+				L4 16v4z"
+				stroke="currentColor"
+				stroke-width="1.8"
+				stroke-linejoin="round"
+			/>
 
-	event.preventDefault();
-	// Не даём странице перезагрузиться.
+			<path
+				d="M13.5 7.5l3 3"
+				stroke="currentColor"
+				stroke-width="1.8"
+				stroke-linecap="round"
+			/>
+		</svg>
+	`;
+}
 
-	const todoText = input.value.trim();
-	// Берём текст из input.
-	// trim() убирает пробелы по краям.
+function getDeleteIcon() {
+	return `
+		<svg
+			viewBox="0 0 24 24"
+			fill="none"
+			aria-hidden="true"
+		>
+			<path
+				d="M4 7h16"
+				stroke="currentColor"
+				stroke-width="1.8"
+				stroke-linecap="round"
+			/>
 
-	if (todoText === "") {
-		// Если поле пустое...
+			<path
+				d="M9 7V4h6v3"
+				stroke="currentColor"
+				stroke-width="1.8"
+				stroke-linecap="round"
+			/>
 
+			<path
+				d="M6.5 7l.8 13h9.4l.8-13"
+				stroke="currentColor"
+				stroke-width="1.8"
+				stroke-linejoin="round"
+			/>
+
+			<path
+				d="M10 11v5M14 11v5"
+				stroke="currentColor"
+				stroke-width="1.8"
+				stroke-linecap="round"
+			/>
+		</svg>
+	`;
+}
+
+function deleteTodo(todo) {
+	const index = todos.indexOf(todo);
+
+	if (index === -1) {
 		return;
-		// ...ничего не делаем.
 	}
 
-	const todo = {
-		// Создаём НОВЫЙ объект задачи.
-
-		text: todoText,
-		// Текст задачи.
-
-		isCompleted: false,
-		// Новая задача изначально невыполнена.
-
-		category: category.value,
-		// Сохраняем выбранную категорию.
-	};
-
-	todos.push(todo);
-	// Добавляем новую задачу в массив todos.
+	todos.splice(index, 1);
 
 	saveTodos();
-	// Сохраняем весь массив в localStorage.
-
-	renderTodos(todos);
-	// Перерисовываем список.
-
-	input.value = "";
-	// Очищаем поле ввода.
-
-	input.focus();
-	// Снова ставим курсор в input.
 
 	updateTodoCount();
-	// Пересчитываем статистику.
-});
 
-// =====================================================
-// СОХРАНЕНИЕ
-// =====================================================
-
-function saveTodos() {
-	// Функция сохраняет массив todos.
-
-	localStorage.setItem("todos", JSON.stringify(todos));
-	// JSON.stringify превращает массив в строку.
-	// setItem записывает эту строку в localStorage.
+	render();
 }
 
-// =====================================================
-// ОТОБРАЖЕНИЕ ЗАДАЧ
-// =====================================================
-
-function renderTodos(todos) {
-	// Функция отвечает за отображение задач на странице.
-
-	ul.innerHTML = "";
-	// Полностью очищаем старый список.
-	// Старые <li> удаляются из HTML.
-
-	const filteredTodos = todos.filter(
-		(todo) => todo.category === currentCategory,
-	);
-	// Создаём новый массив только с задачами
-	// текущей категории.
-	//
-	// Например:
-	// currentCategory = "study"
-	// → сюда попадут только category === "study".
-
-	for (let i = 0; i < filteredTodos.length; i++) {
-		// ВАЖНЫЙ МОМЕНТ:
-		// здесь сейчас снова проходим ПО ВСЕМ todos.
-		//
-		// Поэтому filteredTodos выше пока НЕ используется.
-		// Это именно тот кусок, который мы должны потом исправить.
-
-		const currentTodo = filteredTodos[i];
-		// Берём текущую задачу.
-
-		const todoElement = document.createElement("li");
-		// Создаём новый <li> через JavaScript.
-
-		todoElement.classList.add("todo__item");
-		// Добавляем CSS-класс.
-
-		todoElement.textContent = currentTodo.text;
-		// Выводим текст задачи.
-
-		if (currentTodo.isCompleted === true) {
-			// Если задача выполнена...
-
-			todoElement.classList.add("completed");
-			// ...добавляем класс completed.
-		}
-
-		// =================================================
-		// ВЫПОЛНЕНИЕ
-		// =================================================
-
-		todoElement.addEventListener("dblclick", () => {
-			// Двойной клик по задаче.
-
-			currentTodo.isCompleted = !currentTodo.isCompleted;
-			// Переключаем true ↔ false.
-
-			saveTodos();
-			// Сохраняем новое состояние.
-
-			todoElement.classList.toggle("completed");
-			// Визуально добавляем или убираем completed.
-
-			updateTodoCount();
-			// Обновляем статистику.
-		});
-
-		// =================================================
-		// РЕДАКТИРОВАНИЕ
-		// =================================================
-
-		const editButton = document.createElement("button");
-		// Создаём кнопку редактирования.
-
-		editButton.textContent = "Редактировать";
-		// Текст кнопки.
-
-		todoElement.append(editButton);
-		// Добавляем кнопку внутрь <li>.
-
-		editButton.addEventListener("click", (event) => {
-			// Клик по "Редактировать".
-
-			event.stopPropagation();
-			// Останавливаем всплытие события.
-			// Клик по кнопке не считается кликом по всей задаче.
-
-			modal.hidden = false;
-			// Показываем модальное окно.
-
-			modalInput.value = currentTodo.text;
-			// Вставляем текущий текст задачи в поле модалки.
-
-			modalInput.focus();
-			// Ставим курсор в поле.
-
-			currentEditTodo = currentTodo;
-			// Запоминаем:
-			// какую именно задачу сейчас редактируем.
-		});
-
-		// =================================================
-		// УДАЛЕНИЕ
-		// =================================================
-
-		const deleteButton = document.createElement("button");
-		// Создаём кнопку удаления.
-
-		deleteButton.textContent = "Удалить";
-		// Текст кнопки.
-
-		todoElement.append(deleteButton);
-		// Добавляем кнопку внутрь <li>.
-
-		ul.append(todoElement);
-		// Добавляем весь <li> в <ul>.
-		// Теперь задача появляется на странице.
-
-		deleteButton.addEventListener("click", (event) => {
-			// Клик по "Удалить".
-
-			event.stopPropagation();
-			// Не даём клику пойти дальше на <li>.
-
-			const todoIndex = todos.indexOf(currentTodo);
-			// Находим индекс текущей задачи в массиве todos.
-
-			todos.splice(todoIndex, 1);
-			// Удаляем 1 элемент из массива todos
-			// по индексу todoIndex.
-
-			updateTodoCount();
-			// Обновляем статистику.
-
-			saveTodos();
-			// Сохраняем изменённый массив.
-
-			renderTodos(todos);
-			// Перерисовываем список.
-		});
-	}
-}
-
-// =====================================================
-// ЗАКРЫТИЕ МОДАЛКИ
-// =====================================================
-
-function closeModal() {
-	// Общая функция закрытия модалки.
-
-	modal.hidden = true;
-	// Скрываем окно.
-
-	currentEditTodo = null;
-	// Сбрасываем выбранную для редактирования задачу.
-}
-
-// =====================================================
-// ОТМЕНА
-// =====================================================
-
-modalCancel.addEventListener("click", () => {
-	// Клик по "Отмена".
-
-	closeModal();
-	// Закрываем модалку.
-});
-
-// =====================================================
-// КЛИК ПО ФОНУ
-// =====================================================
-
-modal.addEventListener("click", (event) => {
-	// Отслеживаем клик по модальному окну.
-
-	if (event.target === modal) {
-		// Если кликнули именно по фону,
-		// а не по белому содержимому...
-
-		closeModal();
-		// ...закрываем модалку.
-	}
-});
-
-// =====================================================
-// ESCAPE
-// =====================================================
-
-modalInput.addEventListener("keydown", (event) => {
-	// Отслеживаем нажатие клавиш в modalInput.
-
-	if (event.key === "Escape") {
-		// Если нажали Escape...
-
-		closeModal();
-		// ...закрываем модалку.
-	}
-});
-
-// =====================================================
-// СОХРАНЕНИЕ РЕДАКТИРОВАНИЯ
-// =====================================================
-
-function saveEditedTodo() {
-	// Функция сохраняет отредактированную задачу.
-
-	const newText = modalInput.value.trim();
-	// Получаем новый текст.
-
-	if (newText === "") {
-		// Если текст пустой...
-
+function toggleTodo(todo) {
+	if (todo.category === "notes") {
 		return;
-		// ...ничего не сохраняем.
 	}
 
-	currentEditTodo.text = newText;
-	// Меняем text у выбранной задачи.
+	todo.isCompleted = !todo.isCompleted;
 
 	saveTodos();
-	// Сохраняем изменения в localStorage.
 
-	renderTodos(todos);
-	// Перерисовываем список.
+	updateTodoCount();
 
-	modal.hidden = true;
-	// Закрываем модалку.
-
-	currentEditTodo = null;
-	// Сбрасываем выбранную задачу.
+	render();
 }
 
-// =====================================================
-// КНОПКА SAVE
-// =====================================================
+function createActions(todo) {
+	const actions = document.createElement("div");
 
-modalSave.addEventListener("click", () => {
-	// Нажали "Сохранить".
+	actions.className = "todo__item-actions";
 
-	saveEditedTodo();
-	// Запускаем функцию сохранения.
+	const editButton = document.createElement("button");
+
+	editButton.type = "button";
+
+	editButton.className = "todo__item-action";
+
+	editButton.setAttribute("aria-label", "Редактировать");
+
+	editButton.title = "Редактировать";
+
+	editButton.innerHTML = getEditIcon();
+
+	editButton.addEventListener("click", (event) => {
+		event.stopPropagation();
+
+		openModal(todo);
+	});
+
+	const deleteButton = document.createElement("button");
+
+	deleteButton.type = "button";
+
+	deleteButton.className = "todo__item-action todo__item-action--delete";
+
+	deleteButton.setAttribute("aria-label", "Удалить");
+
+	deleteButton.title = "Удалить";
+
+	deleteButton.innerHTML = getDeleteIcon();
+
+	deleteButton.addEventListener("click", (event) => {
+		event.stopPropagation();
+
+		deleteTodo(todo);
+	});
+
+	actions.append(editButton, deleteButton);
+
+	return actions;
+}
+
+function createTodoItem(todo) {
+	const item = document.createElement("li");
+
+	item.className = "todo__item";
+
+	if (todo.category === "notes") {
+		item.classList.add("todo__item--note");
+
+		const body = document.createElement("div");
+
+		body.className = "todo__item-body";
+
+		const text = document.createElement("span");
+
+		text.className = "todo__item-text";
+
+		text.textContent = todo.text;
+
+		body.append(text);
+
+		const meta = document.createElement("div");
+
+		meta.className = "todo__item-meta";
+
+		const noteLabel = document.createElement("span");
+
+		noteLabel.textContent = "Заметка";
+
+		meta.append(noteLabel);
+
+		const formattedDate = formatDate(todo.date, todo.time);
+
+		if (formattedDate) {
+			const date = document.createElement("span");
+
+			date.className = "todo__item-date";
+
+			date.textContent = formattedDate;
+
+			meta.append(date);
+		}
+
+		body.append(meta);
+
+		item.append(body, createActions(todo));
+
+		return item;
+	}
+
+	item.classList.add(`todo__item--priority-${todo.priority || "medium"}`);
+
+	if (todo.isCompleted) {
+		item.classList.add("completed");
+	}
+
+	const checkButton = document.createElement("button");
+
+	checkButton.type = "button";
+
+	checkButton.className = "todo__item-check";
+
+	checkButton.setAttribute(
+		"aria-label",
+		todo.isCompleted ? "Отметить как невыполненную" : "Выполнить задачу",
+	);
+
+	checkButton.addEventListener("click", (event) => {
+		event.stopPropagation();
+
+		toggleTodo(todo);
+	});
+
+	const body = document.createElement("div");
+
+	body.className = "todo__item-body";
+
+	const text = document.createElement("span");
+
+	text.className = "todo__item-text";
+
+	text.textContent = todo.text;
+
+	body.append(text);
+
+	const meta = document.createElement("div");
+
+	meta.className = "todo__item-meta";
+
+	const project = document.createElement("span");
+
+	project.textContent = getProject(todo.category).name;
+
+	meta.append(project);
+
+	const formattedDate = formatDate(todo.date, todo.time);
+
+	if (formattedDate) {
+		const date = document.createElement("span");
+
+		date.className = "todo__item-date";
+
+		date.textContent = formattedDate;
+
+		meta.append(date);
+	}
+
+	const priority = document.createElement("span");
+
+	priority.className = `todo__priority todo__priority--${
+		todo.priority || "medium"
+	}`;
+
+	priority.textContent = getPriorityText(todo.priority);
+
+	meta.append(priority);
+
+	body.append(meta);
+
+	item.append(checkButton, body, createActions(todo));
+
+	item.addEventListener("dblclick", () => {
+		toggleTodo(todo);
+	});
+
+	return item;
+}
+
+function render() {
+	list.innerHTML = "";
+
+	let visibleTodos;
+
+	if (currentCategory === "home") {
+		visibleTodos = todos;
+	} else {
+		visibleTodos = todos.filter((todo) => todo.category === currentCategory);
+	}
+
+	if (visibleTodos.length === 0) {
+		renderEmpty();
+
+		return;
+	}
+
+	visibleTodos.forEach((todo) => {
+		list.append(createTodoItem(todo));
+	});
+}
+
+function setCategory(categoryId) {
+	currentCategory = categoryId;
+
+	navLinks.forEach((link) => {
+		link.classList.toggle(
+			"todo__nav-link--active",
+			link.dataset.category === categoryId,
+		);
+	});
+
+	const project = getProject(categoryId);
+
+	todoTitle.textContent =
+		categoryId === "home" ? "// Home" : `// ${project.name}`;
+
+	render();
+}
+
+function openModal(todo = null) {
+	currentEditTodo = todo;
+
+	if (todo) {
+		modalTitle.textContent = "Редактировать";
+
+		modalInput.value = todo.text;
+
+		modalCategory.value = todo.category;
+
+		modalDate.value = todo.date || "";
+
+		modalTime.value = todo.time || "";
+
+		const priority = todo.priority || "medium";
+
+		priorityInputs.forEach((radio) => {
+			radio.checked = radio.value === priority;
+		});
+	} else {
+		modalTitle.textContent = "Новая задача";
+
+		modalInput.value = "";
+
+		modalCategory.value = currentCategory;
+
+		modalDate.value = "";
+
+		modalTime.value = "";
+
+		priorityInputs.forEach((radio) => {
+			radio.checked = radio.value === "medium";
+		});
+	}
+
+	modal.hidden = false;
+
+	document.body.style.overflow = "hidden";
+
+	requestAnimationFrame(() => {
+		modalInput.focus();
+	});
+}
+
+function closeModal() {
+	modal.hidden = true;
+
+	currentEditTodo = null;
+
+	document.body.style.overflow = "";
+}
+
+function getSelectedPriority() {
+	const selected = document.querySelector(
+		'.priority input[name="priority"]:checked',
+	);
+
+	return selected ? selected.value : "medium";
+}
+
+function saveModal() {
+	const text = modalInput.value.trim();
+
+	if (!text) {
+		modalInput.focus();
+
+		return;
+	}
+
+	const selectedCategory = modalCategory.value;
+
+	const selectedDate = modalDate.value;
+
+	const selectedTime = modalTime.value;
+
+	const selectedPriority = getSelectedPriority();
+
+	if (currentEditTodo) {
+		currentEditTodo.text = text;
+
+		currentEditTodo.category = selectedCategory;
+
+		currentEditTodo.date = selectedDate;
+
+		currentEditTodo.time = selectedTime;
+
+		currentEditTodo.priority = selectedPriority;
+
+		if (selectedCategory === "notes") {
+			currentEditTodo.isCompleted = false;
+		}
+
+		saveTodos();
+
+		closeModal();
+
+		updateTodoCount();
+
+		setCategory(selectedCategory);
+
+		return;
+	}
+
+	const newTodo = {
+		id: Date.now(),
+
+		text,
+
+		category: selectedCategory,
+
+		date: selectedDate,
+
+		time: selectedTime,
+
+		priority: selectedPriority,
+
+		isCompleted: false,
+	};
+
+	todos.push(newTodo);
+
+	saveTodos();
+
+	closeModal();
+
+	updateTodoCount();
+
+	setCategory(selectedCategory);
+}
+
+addProjectButton.addEventListener("click", () => {
+	openModal();
 });
 
-// =====================================================
-// ENTER
-// =====================================================
+modalCancel.addEventListener("click", closeModal);
 
-modalInput.addEventListener("keydown", (event) => {
-	// Отслеживаем клавиши в modalInput.
+modalClose.addEventListener("click", closeModal);
 
-	if (event.key === "Enter") {
-		// Если нажали Enter...
+modalSave.addEventListener("click", saveModal);
 
-		saveEditedTodo();
-		// Сохраняем задачу.
+modal.addEventListener("click", (event) => {
+	if (event.target === modal) {
+		closeModal();
 	}
 });
+
+navLinks.forEach((link) => {
+	link.addEventListener("click", (event) => {
+		event.preventDefault();
+
+		setCategory(link.dataset.category);
+	});
+});
+
+document.addEventListener("keydown", (event) => {
+	if (modal.hidden) {
+		return;
+	}
+
+	if (event.key === "Escape") {
+		closeModal();
+	}
+
+	if (event.key === "Enter" && event.target === modalInput) {
+		event.preventDefault();
+
+		saveModal();
+	}
+});
+
+const storedTodos = localStorage.getItem("todos");
+
+try {
+	todos = storedTodos ? JSON.parse(storedTodos) : [];
+} catch {
+	todos = [];
+}
+
+todos = todos.map((todo) => ({
+	id: todo.id || Date.now() + Math.random(),
+
+	text: todo.text || "Без названия",
+
+	category: todo.category || "home",
+
+	date: todo.date || "",
+
+	time: todo.time || "",
+
+	priority: todo.priority || "medium",
+
+	isCompleted: Boolean(todo.isCompleted),
+}));
+
+todos.forEach((todo) => {
+	if (todo.category === "notes") {
+		todo.isCompleted = false;
+	}
+});
+
+saveTodos();
+
+updateTodoCount();
+
+setCategory("home");

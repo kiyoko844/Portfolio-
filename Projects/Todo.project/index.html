@@ -4,8 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>Todo List</title>
-
+		<title>// TO-DO</title>
+		<link
+			rel="shortcut icon"
+			href="./icons/favicon-icon.png"
+			type="image/x-icon"
+		/>
 		<link rel="stylesheet" href="./style.css" />
 	</head>
 
@@ -29,12 +33,12 @@
 							data-category="home"
 						>
 							<span>// Home</span>
-							<span class="todo__badge">4</span>
+							<span class="todo__badge">0</span>
 						</a>
 
 						<a href="#" class="todo__nav-link" data-category="today">
 							<span>Today</span>
-							<span class="todo__badge">1</span>
+							<span class="todo__badge">0</span>
 						</a>
 
 						<a href="#" class="todo__nav-link" data-category="week">
@@ -49,7 +53,7 @@
 							data-category="gym"
 						>
 							<span>Gym</span>
-							<span class="todo__badge">1</span>
+							<span class="todo__badge">0</span>
 						</a>
 
 						<a
@@ -66,7 +70,7 @@
 							data-category="work"
 						>
 							<span>Work</span>
-							<span class="todo__badge">1</span>
+							<span class="todo__badge">0</span>
 						</a>
 
 						<a href="#" class="todo__nav-link" data-category="notes">
@@ -74,7 +78,9 @@
 						</a>
 					</nav>
 
-					<button class="todo__add-project" type="button">+</button>
+					<button class="todo__add-project" type="button" aria-label="Добавить">
+						+
+					</button>
 				</aside>
 
 				<main class="todo__main">
@@ -86,34 +92,13 @@
 						</div>
 
 						<div class="todo__stats">
-							<span class="todo__count"> Всего задач: 0 </span>
+							<span class="todo__count">Всего задач: 0</span>
 
-							<span class="todo__remaining"> Осталось: 0 </span>
+							<span class="todo__remaining">Осталось: 0</span>
 
-							<span class="todo__completed"> Выполнено: 0 </span>
+							<span class="todo__completed">Выполнено: 0</span>
 						</div>
 					</div>
-
-					<form class="todo__form">
-						<input
-							class="todo__input"
-							type="text"
-							placeholder="Добавить новую задачу..."
-							autocomplete="off"
-						/>
-
-						<select class="todo__category">
-							<option value="home">Home</option>
-							<option value="today">Today</option>
-							<option value="week">Week</option>
-							<option value="gym">Gym</option>
-							<option value="study">Study</option>
-							<option value="work">Work</option>
-							<option value="notes">Notes</option>
-						</select>
-
-						<button class="todo__add" type="submit">Добавить</button>
-					</form>
 
 					<ul class="todo__list"></ul>
 				</main>
@@ -122,9 +107,91 @@
 
 		<div class="modal" hidden>
 			<div class="modal__content">
-				<h2 class="modal__title">Редактировать задачу</h2>
+				<div class="modal__header">
+					<div>
+						<p class="modal__subtitle">TODO</p>
 
-				<input class="modal__input" type="text" autocomplete="off" />
+						<h2 class="modal__title">Новая задача</h2>
+					</div>
+
+					<button class="modal__close" type="button" aria-label="Закрыть">
+						<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+							<path
+								d="M6 6L18 18M18 6L6 18"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+				</div>
+
+				<div class="modal__field">
+					<label class="modal__label" for="modal-input"> Название </label>
+
+					<input
+						class="modal__input"
+						id="modal-input"
+						type="text"
+						placeholder="Что нужно сделать?"
+						autocomplete="off"
+					/>
+				</div>
+
+				<div class="modal__field">
+					<label class="modal__label" for="modal-category"> Проект </label>
+
+					<div class="modal__select-wrap">
+						<select class="modal__select" id="modal-category">
+							<option value="home">Home</option>
+							<option value="today">Today</option>
+							<option value="week">Week</option>
+							<option value="gym">Gym</option>
+							<option value="study">Study</option>
+							<option value="work">Work</option>
+							<option value="notes">Notes</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="modal__row">
+					<div class="modal__field">
+						<label class="modal__label" for="modal-date"> Дата </label>
+
+						<input class="modal__input" id="modal-date" type="date" />
+					</div>
+
+					<div class="modal__field">
+						<label class="modal__label" for="modal-time"> Время </label>
+
+						<input class="modal__input" id="modal-time" type="time" />
+					</div>
+				</div>
+
+				<div class="modal__field">
+					<label class="modal__label"> Приоритет </label>
+
+					<div class="priority">
+						<label class="priority__item priority__item--low">
+							<input type="radio" name="priority" value="low" />
+
+							<span>Низкий</span>
+						</label>
+
+						<label class="priority__item priority__item--medium">
+							<input type="radio" name="priority" value="medium" checked />
+
+							<span>Средний</span>
+						</label>
+
+						<label class="priority__item priority__item--high">
+							<input type="radio" name="priority" value="high" />
+
+							<span>Высокий</span>
+						</label>
+					</div>
+				</div>
 
 				<div class="modal__actions">
 					<button class="modal__cancel" type="button">Отмена</button>
